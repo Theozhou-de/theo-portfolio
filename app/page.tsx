@@ -49,6 +49,15 @@ const strengths = [
   },
 ];
 
+const heroWorks = [
+  { label: "BRAND VISUAL", className: "tile-one" },
+  { label: "AI COMMERCE", className: "tile-two" },
+  { label: "VIDEO STORY", className: "tile-three" },
+  { label: "CONTENT LAB", className: "tile-four" },
+  { label: "WORKFLOW", className: "tile-five" },
+  { label: "CAMPAIGN", className: "tile-six" },
+];
+
 export default function Home() {
   return (
     <main>
@@ -61,40 +70,45 @@ export default function Home() {
         </div>
         <nav className="nav shell" aria-label="主导航">
           <a className="logo" href="#home" aria-label="返回首页">
-            QX<span>.</span>
+            QIXIANG
           </a>
           <div className="nav-links">
-            <a href="#about">关于</a>
-            <a href="#projects">项目</a>
-            <a href="#strengths">优势</a>
+            <a href="#about">个人经历</a>
+            <a href="#projects">精选作品</a>
+            <a href="#strengths">个人优势</a>
           </div>
           <a className="nav-contact" href="#contact">
-            联系我 <span>↗</span>
+            联系我
           </a>
         </nav>
 
         <div className="hero-content shell">
-          <div className="eyebrow">
-            <span className="status-dot" />
-            AVAILABLE FOR NEW OPPORTUNITIES
+          <div className="hero-title-row">
+            <div>
+              <p className="hero-name">QIXIANG</p>
+              <h1>PORTFOLIO</h1>
+              <p className="hero-signature">Qixiang Zhou</p>
+            </div>
+            <div className="hero-beam" aria-hidden="true">
+              <span>✦</span>
+            </div>
           </div>
-          <h1>
-            AI CAN CREATE.
-            <br />
-            <span>I MAKE IT MATTER.</span>
-          </h1>
-          <div className="hero-bottom">
+          <div className="hero-intro">
             <p>
-              周琦翔 / AIGC 内容专家 &amp; 项目 PM
+              AIGC 内容专家 / AIGC 项目 PM
               <br />
-              用内容策略与生成式技术，创造可被感知的商业价值。
+              用生成式技术，把创意变成可被看见的商业结果
             </p>
-            <a className="circle-link" href="#about" aria-label="向下查看">
-              ↓
-            </a>
           </div>
         </div>
-        <p className="hero-side-note">PORTFOLIO · 2026</p>
+        <a className="hero-works" href="#projects" aria-label="查看精选作品">
+          {heroWorks.map((item, index) => (
+            <span className={`hero-tile ${item.className}`} key={item.label}>
+              <b>0{index + 1}</b>
+              <em>{item.label}</em>
+            </span>
+          ))}
+        </a>
       </section>
 
       <section className="about section shell" id="about">
