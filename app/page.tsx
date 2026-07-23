@@ -50,12 +50,30 @@ const strengths = [
 ];
 
 const heroWorks = [
-  { label: "BRAND VISUAL", className: "tile-one" },
-  { label: "AI COMMERCE", className: "tile-two" },
-  { label: "VIDEO STORY", className: "tile-three" },
-  { label: "CONTENT LAB", className: "tile-four" },
-  { label: "WORKFLOW", className: "tile-five" },
-  { label: "CAMPAIGN", className: "tile-six" },
+  {
+    label: "BRAND VISUAL",
+    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=900&q=82",
+  },
+  {
+    label: "AI COMMERCE",
+    image: "https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?auto=format&fit=crop&w=900&q=82",
+  },
+  {
+    label: "VIDEO STORY",
+    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=900&q=82",
+  },
+  {
+    label: "CONTENT LAB",
+    image: "https://images.unsplash.com/photo-1614812513172-567d2fe96a75?auto=format&fit=crop&w=900&q=82",
+  },
+  {
+    label: "WORKFLOW",
+    image: "https://images.unsplash.com/photo-1618172193622-ae2d025f4032?auto=format&fit=crop&w=900&q=82",
+  },
+  {
+    label: "CAMPAIGN",
+    image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=900&q=82",
+  },
 ];
 
 export default function Home() {
@@ -103,7 +121,9 @@ export default function Home() {
         </div>
         <a className="hero-works" href="#projects" aria-label="查看精选作品">
           {heroWorks.map((item, index) => (
-            <span className={`hero-tile ${item.className}`} key={item.label}>
+            <span className="hero-tile" key={item.label}>
+              <img src={item.image} alt="" />
+              <i aria-hidden="true" />
               <b>0{index + 1}</b>
               <em>{item.label}</em>
             </span>
