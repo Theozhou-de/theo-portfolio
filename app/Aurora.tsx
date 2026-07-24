@@ -86,6 +86,7 @@ struct ColorStop {
 
 void main() {
   vec2 uv = gl_FragCoord.xy / uResolution;
+  float drift = uTime;
 
   ColorStop colors[3];
   colors[0] = ColorStop(uColorStops[0], 0.0);
@@ -95,14 +96,17 @@ void main() {
   vec3 rampColor;
   COLOR_RAMP(colors, uv.x, rampColor);
 
-  float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
+  float primaryWave = snoise(vec2(uv.x * 2.15 + drift * 0.32, drift * 0.48));
+  float secondaryWave = snoise(vec2(uv.x * 3.7 - drift * 0.18, drift * 0.31 + 7.0));
+  float height = (primaryWave * 0.72 + secondaryWave * 0.28) * 0.62 * uAmplitude;
   height = exp(height);
-  height = uv.y * 2.0 - height + 0.2;
-  float intensity = 0.6 * height;
+  height = uv.y * 2.08 - height + 0.22;
+  float intensity = 0.68 * height;
 
-  float midPoint = 0.20;
+  float midPoint = 0.16;
   float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
-  vec3 auroraColor = intensity * rampColor;
+  float shimmer = 0.86 + 0.14 * sin((uv.x * 5.0) + drift * 0.75);
+  vec3 auroraColor = intensity * rampColor * shimmer;
 
   fragColor = vec4(auroraColor * auroraAlpha, auroraAlpha);
 }
@@ -119,9 +123,9 @@ const DEFAULT_COLOR_STOPS: [string, string, string] = ["#30116f", "#8d5cff", "#4
 
 export default function Aurora({
   colorStops = DEFAULT_COLOR_STOPS,
-  amplitude = 1.15,
-  blend = 0.72,
-  speed = 0.55,
+  amplitude = 1.28,
+  blend = 0.62,
+  speed = 0.82,
 }: AuroraProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -189,7 +193,7 @@ export default function Aurora({
       const update = (time: number) => {
         animationFrame = requestAnimationFrame(update);
         if (!visible) return;
-        program.uniforms.uTime.value = time * 0.0001 * speed;
+        program.uniforms.uTime.value = time * 0.00034 * speed;
         renderer?.render({ scene: mesh });
       };
       animationFrame = requestAnimationFrame(update);
