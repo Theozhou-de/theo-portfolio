@@ -49,86 +49,95 @@ const strengths = [
   },
 ];
 
-const heroWorks = [
-  {
-    label: "BRAND VISUAL",
-    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=900&q=82",
-  },
-  {
-    label: "AI COMMERCE",
-    image: "https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?auto=format&fit=crop&w=900&q=82",
-  },
-  {
-    label: "VIDEO STORY",
-    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=900&q=82",
-  },
-  {
-    label: "CONTENT LAB",
-    image: "https://images.unsplash.com/photo-1614812513172-567d2fe96a75?auto=format&fit=crop&w=900&q=82",
-  },
-  {
-    label: "WORKFLOW",
-    image: "https://images.unsplash.com/photo-1618172193622-ae2d025f4032?auto=format&fit=crop&w=900&q=82",
-  },
-  {
-    label: "CAMPAIGN",
-    image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=900&q=82",
-  },
-];
-
 export default function Home() {
   return (
     <main>
-      <section className="hero" id="home">
-        <div className="hero-motion" aria-hidden="true">
-          <span className="orb orb-one" />
-          <span className="orb orb-two" />
-          <span className="orb orb-three" />
-          <div className="grid-field" />
-        </div>
-        <nav className="nav shell" aria-label="主导航">
-          <a className="logo" href="#home" aria-label="返回首页">
-            QIXIANG
+      <section className="hero hero-editorial-root" id="home">
+        <div className="editorial-aurora" aria-hidden="true" />
+        <div className="editorial-grain" aria-hidden="true" />
+
+        <nav className="editorial-nav shell" aria-label="主导航">
+          <a className="editorial-logo" href="#home" aria-label="返回首页">
+            <span>THEO</span>
+            <i>/</i>
+            <span>ZHOU</span>
           </a>
-          <div className="nav-links">
-            <a href="#about">个人经历</a>
-            <a href="#projects">精选作品</a>
-            <a href="#strengths">个人优势</a>
+          <div className="editorial-nav-links">
+            <a href="#projects">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#strengths">EXPERTISE</a>
           </div>
-          <a className="nav-contact" href="#contact">
-            联系我
+          <a className="editorial-contact" href="#contact">
+            <span>LET&apos;S TALK</span>
+            <b aria-hidden="true">↗</b>
           </a>
         </nav>
 
-        <div className="hero-content shell">
-          <div className="hero-title-row">
-            <div>
-              <p className="hero-name">QIXIANG</p>
-              <h1>PORTFOLIO</h1>
-              <p className="hero-signature">Qixiang Zhou</p>
+        <div className="editorial-hero shell">
+          <aside className="editorial-side editorial-side-left">
+            <div className="editorial-status">
+              <span aria-hidden="true" />
+              <p>AVAILABLE FOR<br />SELECTED PROJECTS</p>
             </div>
-            <div className="hero-beam" aria-hidden="true">
-              <span>✦</span>
+            <div className="editorial-role">
+              <p>01 / PROFILE</p>
+              <h2>AIGC CONTENT EXPERT<br />&amp; PROJECT PM</h2>
+              <span>Shanghai · China</span>
             </div>
+          </aside>
+
+          <div className="editorial-stage">
+            <h1 className="editorial-name" aria-label="Theo Zhou">
+              <span className="editorial-theo">THEO</span>
+              <span className="editorial-zhou">ZHOU</span>
+            </h1>
+            <div className="editorial-visual">
+              <img
+                src="/theo-hero-visual.png"
+                alt="紫色调抽象数字艺术人物视觉"
+              />
+              <div className="editorial-visual-wash" aria-hidden="true" />
+              <div className="editorial-visual-meta">
+                <span>GENERATIVE PORTRAIT</span>
+                <span>NO. 001 / 2026</span>
+              </div>
+            </div>
+            <span className="editorial-cross editorial-cross-one" aria-hidden="true">+</span>
+            <span className="editorial-cross editorial-cross-two" aria-hidden="true">+</span>
           </div>
-          <div className="hero-intro">
-            <p>
-              AIGC 内容专家 / AIGC 项目 PM
-              <br />
-              用生成式技术，把创意变成可被看见的商业结果
-            </p>
-          </div>
+
+          <aside className="editorial-side editorial-side-right">
+            <p className="editorial-index">PORTFOLIO / 2026</p>
+            <div className="editorial-statement">
+              <p>
+                I turn emerging AI capabilities into visual stories,
+                content systems and real-world projects.
+              </p>
+              <span>
+                将新兴 AI 能力，转化为视觉叙事、内容系统与真正落地的项目。
+              </span>
+            </div>
+            <div className="editorial-metrics">
+              <div>
+                <strong>05+</strong>
+                <span>YEARS IN<br />E-COMMERCE</span>
+              </div>
+              <div>
+                <strong>20+</strong>
+                <span>AI CONTENT<br />PROJECTS</span>
+              </div>
+            </div>
+          </aside>
         </div>
-        <a className="hero-works" href="#projects" aria-label="查看精选作品">
-          {heroWorks.map((item, index) => (
-            <span className="hero-tile" key={item.label}>
-              <img src={item.image} alt="" />
-              <i aria-hidden="true" />
-              <b>0{index + 1}</b>
-              <em>{item.label}</em>
-            </span>
-          ))}
-        </a>
+
+        <div className="editorial-footer shell">
+          <a href="#about">
+            <span>SCROLL TO EXPLORE</span>
+            <b aria-hidden="true">↘</b>
+          </a>
+          <p>CREATIVE DIRECTION · AI WORKFLOW · DELIVERY</p>
+          <span>© 2026</span>
+        </div>
       </section>
 
       <section className="about section shell" id="about">
