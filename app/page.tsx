@@ -60,26 +60,26 @@ const heroWorks = [
 export default function Home() {
   return (
     <main>
+      <nav className="editorial-nav shell" aria-label="主导航">
+        <a className="editorial-logo" href="#home" aria-label="返回首页">
+          <span>THEO</span>
+          <i>/</i>
+          <span>ZHOU</span>
+        </a>
+        <div className="editorial-nav-links">
+          <a href="#projects">WORK</a>
+          <a href="#about">ABOUT</a>
+          <a href="#strengths">EXPERTISE</a>
+        </div>
+        <a className="editorial-contact" href="#contact">
+          <span>LET&apos;S TALK</span>
+          <b aria-hidden="true">↗</b>
+        </a>
+      </nav>
+
       <section className="hero hero-editorial-root" id="home">
         <div className="editorial-aurora" aria-hidden="true" />
         <div className="editorial-grain" aria-hidden="true" />
-
-        <nav className="editorial-nav shell" aria-label="主导航">
-          <a className="editorial-logo" href="#home" aria-label="返回首页">
-            <span>THEO</span>
-            <i>/</i>
-            <span>ZHOU</span>
-          </a>
-          <div className="editorial-nav-links">
-            <a href="#projects">WORK</a>
-            <a href="#about">ABOUT</a>
-            <a href="#strengths">EXPERTISE</a>
-          </div>
-          <a className="editorial-contact" href="#contact">
-            <span>LET&apos;S TALK</span>
-            <b aria-hidden="true">↗</b>
-          </a>
-        </nav>
 
         <div className="refined-hero shell">
           <div className="refined-copy">
