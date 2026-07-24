@@ -49,6 +49,14 @@ const strengths = [
   },
 ];
 
+const heroWorks = [
+  { src: "/theo-hero-visual.png", label: "FORM STUDY", position: "50% 46%" },
+  { src: "/theo-hero-scene.png", label: "VIOLET WORLD", position: "50% 66%" },
+  { src: "/theo-hero-visual.png", label: "MATERIAL / 01", position: "50% 72%" },
+  { src: "/theo-hero-scene.png", label: "AI LANDSCAPE", position: "50% 42%" },
+  { src: "/theo-hero-visual.png", label: "GENERATIVE FORM", position: "50% 30%" },
+];
+
 export default function Home() {
   return (
     <main>
@@ -73,69 +81,53 @@ export default function Home() {
           </a>
         </nav>
 
-        <div className="editorial-hero shell">
-          <aside className="editorial-side editorial-side-left">
-            <div className="editorial-status">
-              <span aria-hidden="true" />
-              <p>AVAILABLE FOR<br />SELECTED PROJECTS</p>
-            </div>
-            <div className="editorial-role">
-              <p>01 / PROFILE</p>
-              <h2>AIGC CONTENT EXPERT<br />&amp; PROJECT PM</h2>
-              <span>Shanghai · China</span>
-            </div>
-          </aside>
-
-          <div className="editorial-stage">
-            <h1 className="editorial-name" aria-label="Theo Zhou">
-              <span className="editorial-theo">THEO</span>
-              <span className="editorial-zhou">ZHOU</span>
+        <div className="refined-hero shell">
+          <div className="refined-copy">
+            <p className="refined-index">PORTFOLIO / 2026</p>
+            <h1 className="refined-name" aria-label="Theo Zhou">
+              <span>THEO</span>
+              <span>ZHOU</span>
             </h1>
-            <div className="editorial-visual">
-              <img
-                src="/theo-hero-visual.png"
-                alt="紫色调抽象数字艺术人物视觉"
-              />
-              <div className="editorial-visual-wash" aria-hidden="true" />
-              <div className="editorial-visual-meta">
-                <span>GENERATIVE PORTRAIT</span>
-                <span>NO. 001 / 2026</span>
-              </div>
+            <div className="refined-role">
+              <span className="refined-dot" aria-hidden="true" />
+              <p>AIGC CONTENT EXPERT<br />&amp; PROJECT PM</p>
+              <small>将创意、AI 与商业结果连接起来</small>
             </div>
-            <span className="editorial-cross editorial-cross-one" aria-hidden="true">+</span>
-            <span className="editorial-cross editorial-cross-two" aria-hidden="true">+</span>
           </div>
 
-          <aside className="editorial-side editorial-side-right">
-            <p className="editorial-index">PORTFOLIO / 2026</p>
-            <div className="editorial-statement">
-              <p>
-                I turn emerging AI capabilities into visual stories,
-                content systems and real-world projects.
-              </p>
-              <span>
-                将新兴 AI 能力，转化为视觉叙事、内容系统与真正落地的项目。
-              </span>
+          <div className="refined-stage">
+            <div className="refined-halo" aria-hidden="true" />
+            <div className="refined-visual">
+              <img
+                src="/theo-hero-visual.png"
+                alt="紫色半透明生成艺术雕塑"
+              />
+              <div className="refined-visual-wash" aria-hidden="true" />
             </div>
-            <div className="editorial-metrics">
-              <div>
-                <strong>05+</strong>
-                <span>YEARS IN<br />E-COMMERCE</span>
-              </div>
-              <div>
-                <strong>20+</strong>
-                <span>AI CONTENT<br />PROJECTS</span>
-              </div>
-            </div>
-          </aside>
+            <span className="refined-star star-one" aria-hidden="true">✦</span>
+            <span className="refined-star star-two" aria-hidden="true">✦</span>
+          </div>
+
+          <div className="refined-side-note">
+            <p>CREATIVE DIRECTION<br />AI WORKFLOW<br />PROJECT DELIVERY</p>
+            <span>SHANGHAI · CHINA</span>
+          </div>
         </div>
 
-        <div className="editorial-footer shell">
-          <a href="#about">
-            <span>SCROLL TO EXPLORE</span>
-            <b aria-hidden="true">↘</b>
-          </a>
-          <p>CREATIVE DIRECTION · AI WORKFLOW · DELIVERY</p>
+        <div className="hero-marquee" aria-label="精选作品预览">
+          <div className="hero-marquee-track">
+            {[...heroWorks, ...heroWorks].map((work, index) => (
+              <a className="hero-work-card" href="#projects" key={`${work.label}-${index}`}>
+                <img src={work.src} alt="" style={{ objectPosition: work.position }} />
+                <span>{String((index % heroWorks.length) + 1).padStart(2, "0")} / {work.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="refined-footer shell">
+          <a href="#about"><span>SCROLL TO EXPLORE</span><b aria-hidden="true">↓</b></a>
+          <p>SELECTED WORKS · PERSONAL ARCHIVE</p>
           <span>© 2026</span>
         </div>
       </section>
