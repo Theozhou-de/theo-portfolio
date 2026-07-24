@@ -1,3 +1,5 @@
+import Aurora from "./Aurora";
+
 const projects = [
   {
     index: "01",
@@ -78,7 +80,7 @@ export default function Home() {
       </nav>
 
       <section className="hero hero-editorial-root" id="home">
-        <div className="editorial-aurora" aria-hidden="true" />
+        <Aurora />
         <div className="editorial-grain" aria-hidden="true" />
 
         <div className="refined-hero shell">
