@@ -50,11 +50,11 @@ const strengths = [
 ];
 
 const heroWorks = [
-  { src: "/theo-hero-visual.png", label: "FORM STUDY", position: "50% 46%" },
+  { src: "/theo-hero-obsidian.png", label: "OBSIDIAN / 01", position: "50% 48%" },
   { src: "/theo-hero-scene.png", label: "VIOLET WORLD", position: "50% 66%" },
   { src: "/theo-hero-visual.png", label: "MATERIAL / 01", position: "50% 72%" },
   { src: "/theo-hero-scene.png", label: "AI LANDSCAPE", position: "50% 42%" },
-  { src: "/theo-hero-visual.png", label: "GENERATIVE FORM", position: "50% 30%" },
+  { src: "/theo-hero-obsidian.png", label: "GENERATIVE FORM", position: "50% 38%" },
 ];
 
 export default function Home() {
@@ -99,8 +99,8 @@ export default function Home() {
             <div className="refined-halo" aria-hidden="true" />
             <div className="refined-visual">
               <img
-                src="/theo-hero-visual.png"
-                alt="紫色半透明生成艺术雕塑"
+                src="/theo-hero-obsidian.png"
+                alt="黑曜石与紫色晶体融合的生成艺术雕塑，象征将创意转化为结构化成果"
               />
               <div className="refined-visual-wash" aria-hidden="true" />
             </div>

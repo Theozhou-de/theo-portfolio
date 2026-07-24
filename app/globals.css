@@ -1549,8 +1549,18 @@ a {
 }
 
 .editorial-nav {
-  height: 84px;
-  border-bottom-color: rgba(255, 255, 255, .1);
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  height: 76px;
+  padding-inline: clamp(22px, 3vw, 46px);
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  background: rgba(0, 0, 0, .70);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .24);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  backdrop-filter: blur(22px) saturate(125%);
 }
 
 .refined-hero {
@@ -1561,7 +1571,7 @@ a {
   grid-template-columns: minmax(510px, .98fr) minmax(430px, .9fr) minmax(130px, .34fr);
   align-items: center;
   gap: clamp(20px, 2.2vw, 42px);
-  padding-top: 84px;
+  padding-top: 76px;
 }
 
 .refined-copy {
@@ -1673,9 +1683,11 @@ a {
   min-width: 330px;
   min-height: 490px;
   overflow: hidden;
-  border-radius: 48% 48% 10px 10px;
-  background: #110d19;
-  box-shadow: 0 42px 100px rgba(0, 0, 0, .55);
+  border-radius: 48% 48% 12px 12px;
+  background: #08070b;
+  box-shadow:
+    0 42px 100px rgba(0, 0, 0, .62),
+    0 0 0 1px rgba(196, 170, 255, .08);
   animation: refinedVisualIn 1.2s cubic-bezier(.18, .8, .2, 1) both;
 }
 
@@ -1687,15 +1699,15 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 52%;
-  filter: saturate(.88) contrast(1.08) brightness(.82);
-  transform: scale(1.06);
+  object-position: 50% 50%;
+  filter: saturate(.82) contrast(1.1) brightness(.86);
+  transform: scale(1.025);
   transition: transform 1.2s cubic-bezier(.2, .7, .2, 1), filter 1.2s ease;
 }
 
 .refined-visual:hover img {
-  transform: scale(1.105);
-  filter: saturate(1) contrast(1.08) brightness(.9);
+  transform: scale(1.065);
+  filter: saturate(.96) contrast(1.1) brightness(.92);
 }
 
 .refined-visual-wash {
@@ -1843,12 +1855,17 @@ a {
 
 @media (max-width: 760px) {
   .hero-editorial-root { padding-bottom: 142px; }
-  .editorial-nav { height: 72px; grid-template-columns: 1fr auto; }
+  .editorial-nav {
+    height: 68px;
+    grid-template-columns: 1fr auto;
+    padding-inline: 18px;
+    border-radius: 0 0 14px 14px;
+  }
   .editorial-contact { padding-left: 0; }
   .refined-hero {
     min-height: calc(100svh - 142px);
     display: block;
-    padding-top: 72px;
+    padding-top: 68px;
   }
   .refined-copy {
     position: absolute;
