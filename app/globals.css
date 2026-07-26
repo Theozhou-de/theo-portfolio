@@ -874,6 +874,68 @@ a {
   }
 }
 
+/* Motion system — quiet, cinematic, and deliberately restrained */
+.cursor-glow {
+  position: fixed;
+  z-index: 1;
+  top: -180px;
+  left: -180px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: .15;
+  background: radial-gradient(circle, #8b5cf6 0%, rgba(139, 92, 246, .34) 30%, transparent 70%);
+  filter: blur(60px);
+  will-change: transform;
+}
+
+.hero-editorial-root,
+.editorial-nav,
+.contact,
+.projects,
+.about,
+.strengths {
+  position: relative;
+  z-index: 2;
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: border-color 420ms ease, box-shadow 420ms ease;
+}
+
+.tilt-card .project-art,
+.tilt-card .project-meta,
+.tilt-card .project-no,
+.tilt-card .project-arrow {
+  transition: transform 620ms cubic-bezier(.22, 1, .36, 1), filter 620ms ease;
+}
+
+.tilt-card:hover {
+  border-color: rgba(203, 180, 255, .38);
+  box-shadow: 0 34px 80px rgba(0, 0, 0, .34), 0 0 0 1px rgba(164, 124, 255, .1);
+}
+
+.tilt-card:hover .project-art { transform: scale(1.05); }
+.tilt-card:hover .project-meta,
+.tilt-card:hover .project-no,
+.tilt-card:hover .project-arrow { transform: translateZ(24px); }
+
+@media (hover: none), (max-width: 760px) {
+  .cursor-glow { display: none; }
+  .tilt-card:hover .project-art,
+  .tilt-card:hover .project-meta,
+  .tilt-card:hover .project-no,
+  .tilt-card:hover .project-arrow { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow { display: none; }
+  .tilt-card { transform: none !important; }
+}
+
 /* 2026 editorial hero */
 .hero-editorial-root {
   --hero-ink: #0a090d;

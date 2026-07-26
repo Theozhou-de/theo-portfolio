@@ -1,4 +1,5 @@
 import Aurora from "./Aurora";
+import { CursorGlow, ImageReveal, Reveal, TextReveal, TiltCard } from "./Animation";
 
 const projects = [
   {
@@ -62,6 +63,7 @@ const heroWorks = [
 export default function Home() {
   return (
     <main>
+      <CursorGlow />
       <nav className="editorial-nav shell" aria-label="主导航">
         <a className="editorial-logo" href="#home" aria-label="返回首页">
           <span>THEO</span>
@@ -99,13 +101,13 @@ export default function Home() {
 
           <div className="refined-stage">
             <div className="refined-halo" aria-hidden="true" />
-            <div className="refined-visual">
+            <ImageReveal className="refined-visual">
               <img
                 src="/theo-hero-obsidian.png"
                 alt="黑曜石与紫色晶体融合的生成艺术雕塑，象征将创意转化为结构化成果"
               />
               <div className="refined-visual-wash" aria-hidden="true" />
-            </div>
+            </ImageReveal>
             <span className="refined-star star-one" aria-hidden="true">✦</span>
             <span className="refined-star star-two" aria-hidden="true">✦</span>
           </div>
@@ -135,20 +137,20 @@ export default function Home() {
       </section>
 
       <section className="about section shell" id="about">
-        <div className="section-kicker">
+        <TextReveal className="section-kicker">
           <span>01</span>
           <p>ABOUT / EXPERIENCE</p>
-        </div>
+        </TextReveal>
         <div className="about-grid">
-          <div className="portrait">
+          <ImageReveal className="portrait">
             <div className="portrait-glow" />
             <div className="portrait-copy">
               <span>QIXIANG ZHOU</span>
               <strong>QX</strong>
               <p>AIGC · CONTENT · PM</p>
             </div>
-          </div>
-          <div className="about-copy">
+          </ImageReveal>
+          <Reveal className="about-copy" delay={0.1}>
             <p className="lead">
               我是一名从电商增长一线走向
               <em> AIGC 内容与项目管理</em>的复合型创作者。
@@ -179,23 +181,23 @@ export default function Home() {
                 <small>内容策略 · 项目推进 · AI 工作流 · 数据分析</small>
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="projects section" id="projects">
         <div className="shell">
-          <div className="section-heading">
+          <TextReveal className="section-heading">
             <div className="section-kicker">
               <span>02</span>
               <p>SELECTED WORKS</p>
             </div>
             <h2>精选项目</h2>
             <p>把创意、工具与商业目标组织成完整作品。</p>
-          </div>
+          </TextReveal>
           <div className="project-list">
-            {projects.map((project) => (
-              <article className={`project-card ${project.className}`} key={project.index}>
+            {projects.map((project, index) => (
+              <TiltCard className={`project-card ${project.className}`} delay={index * 0.15} key={project.index}>
                 <div className="project-no">{project.index}</div>
                 <div className="project-art" aria-hidden="true">
                   <span className="art-ring" />
@@ -209,36 +211,36 @@ export default function Home() {
                   <span>{project.subtitle}</span>
                 </div>
                 <div className="project-arrow">↗</div>
-              </article>
+              </TiltCard>
             ))}
           </div>
         </div>
       </section>
 
       <section className="strengths section shell" id="strengths">
-        <div className="section-heading compact">
+        <TextReveal className="section-heading compact">
           <div className="section-kicker">
             <span>03</span>
             <p>CORE STRENGTHS</p>
           </div>
           <h2>我能带来的价值</h2>
-        </div>
+        </TextReveal>
         <div className="strength-grid">
-          {strengths.map((item) => (
-            <article className="strength-card" key={item.number}>
+          {strengths.map((item, index) => (
+            <Reveal className="strength-card" delay={index * 0.1} key={item.number}>
               <span className="strength-number">{item.number}</span>
               <p className="strength-en">{item.en}</p>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <div className="card-mark">✦</div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <footer className="contact" id="contact">
         <div className="contact-glow" aria-hidden="true" />
-        <div className="shell contact-inner">
+        <Reveal className="shell contact-inner">
           <p className="contact-label">LET&apos;S CREATE SOMETHING MEANINGFUL</p>
           <h2>
             有好想法？
@@ -254,7 +256,7 @@ export default function Home() {
               <a href="#home">返回顶部 ↑</a>
             </div>
           </div>
-        </div>
+        </Reveal>
       </footer>
     </main>
   );
