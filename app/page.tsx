@@ -75,24 +75,24 @@ export default function Home() {
         <div className="editorial-grain" aria-hidden="true" />
 
         <div className="refined-hero shell">
-          <div className="refined-copy">
+          <div className="refined-copy refined-type-back">
             <h1 className="refined-name" aria-label="THEO ZHOU PORTFOLIO">
               <span className="hero-title-theo">THEO</span>
               <span className="hero-title-zhou">ZHOU</span>
             </h1>
-            <p className="hero-portfolio">PORTFOLIO</p>
           </div>
 
           <div className="refined-stage refined-avatar-stage">
             <div className="refined-halo" aria-hidden="true" />
             <div className="refined-visual refined-avatar">
               <img
-                src="/theo-avatar-v2.png"
+                src="/theo-avatar-cutout.png"
                 alt="Theo 的灰色西装 Q 版个人形象"
               />
-              <div className="refined-visual-wash" aria-hidden="true" />
             </div>
           </div>
+
+          <p className="hero-portfolio refined-type-front">PORTFOLIO</p>
 
           <div className="refined-side-note">
             <p className="side-role">AIGC CONTENT EXPERT<br /><b>/</b>&nbsp; PROJECT PM</p>

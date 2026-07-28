@@ -2574,3 +2574,146 @@ a {
   .refined-footer .hero-page { font-size: 13px; }
   .hero-page i { width: 44px; }
 }
+
+/* Hero v19 — transparent character woven through the editorial typography. */
+.hero-editorial-root {
+  min-height: 100svh;
+  border: 4px solid #343438;
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse 34% 56% at 53% 55%, rgba(91, 66, 137, .20), transparent 70%),
+    linear-gradient(180deg, #070708 0%, #08080a 62%, #0a0a0d 100%) !important;
+}
+
+.hero-editorial-root::before {
+  opacity: .34;
+  background:
+    radial-gradient(ellipse 25% 18% at 52% 88%, rgba(142, 105, 238, .22), transparent 74%),
+    linear-gradient(90deg, rgba(255,255,255,.015), transparent 30%, rgba(255,255,255,.018) 70%, transparent) !important;
+}
+
+.refined-hero { position: relative; min-height: 100svh; }
+
+.refined-type-back {
+  position: absolute;
+  z-index: 2;
+  top: 19.5%;
+  left: 9.5%;
+  width: 64%;
+  pointer-events: none;
+}
+
+.refined-name {
+  margin: 0 !important;
+  color: #e8e5ed !important;
+  font-family: Didot, "Bodoni MT", "Times New Roman", Georgia, serif !important;
+  font-size: clamp(150px, 17.2vw, 292px) !important;
+  font-weight: 400 !important;
+  line-height: .72 !important;
+  letter-spacing: -.075em !important;
+  text-transform: uppercase;
+}
+
+.refined-name span {
+  display: block !important;
+  width: max-content;
+  color: inherit !important;
+  text-shadow: 0 2px 18px rgba(231,226,242,.09);
+}
+
+.refined-name .hero-title-zhou {
+  margin-top: .16em !important;
+  color: rgba(209,203,219,.74) !important;
+}
+
+.refined-stage {
+  position: absolute;
+  z-index: 5;
+  left: 51.5%;
+  bottom: 8.5%;
+  width: min(27vw, 470px);
+  height: 79%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.refined-halo {
+  z-index: 0;
+  inset: 7% -36% -3%;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  opacity: .48;
+  background:
+    radial-gradient(ellipse at 50% 88%, rgba(164,123,255,.30), transparent 44%),
+    radial-gradient(ellipse at 50% 31%, rgba(112,79,170,.20), transparent 62%);
+  filter: blur(34px);
+}
+
+.refined-avatar,
+.refined-avatar-stage { overflow: visible !important; }
+
+.refined-avatar {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  animation: refinedAvatarIn 1.1s cubic-bezier(.18,.8,.2,1) both;
+}
+
+.refined-avatar::after,
+.refined-avatar .refined-visual-wash { display: none !important; }
+
+.refined-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: 50% 100% !important;
+  mix-blend-mode: normal !important;
+  filter: drop-shadow(0 20px 28px rgba(0,0,0,.38)) saturate(.88) contrast(1.03) !important;
+  transform: none !important;
+}
+
+.refined-avatar:hover img { transform: none !important; }
+
+.refined-type-front {
+  position: absolute;
+  z-index: 7;
+  top: 56.2%;
+  left: 9.6%;
+  width: 58%;
+  margin: 0;
+  color: #8f64ff !important;
+  font-family: Arial, "Helvetica Neue", sans-serif !important;
+  font-size: clamp(46px, 5.35vw, 92px) !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  letter-spacing: .31em !important;
+  white-space: nowrap;
+  text-shadow: 0 0 22px rgba(118,73,255,.32);
+  pointer-events: none;
+}
+
+.refined-side-note { z-index: 8; }
+.editorial-nav,
+.hero-progress,
+.refined-footer { z-index: 10; }
+
+@media (max-width: 1050px) {
+  .refined-type-back { left: 7%; width: 70%; }
+  .refined-name { font-size: clamp(124px, 16.5vw, 205px) !important; }
+  .refined-stage { left: 52%; width: min(34vw, 390px); }
+  .refined-type-front { left: 7%; width: 68%; font-size: clamp(38px, 5.2vw, 62px) !important; }
+}
+
+@media (max-width: 760px) {
+  .hero-editorial-root { border-width: 0; border-radius: 0; }
+  .refined-type-back { top: 23%; left: 7%; width: 90%; }
+  .refined-name { font-size: clamp(92px, 24vw, 160px) !important; line-height: .72 !important; }
+  .refined-stage { left: 56%; bottom: 10%; width: min(64vw, 310px); height: 59vh; }
+  .refined-type-front { top: 55%; left: 7%; width: 86%; font-size: clamp(26px, 8vw, 48px) !important; letter-spacing: .22em !important; }
+}
