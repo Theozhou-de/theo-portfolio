@@ -75,6 +75,8 @@ export default function Home() {
         <div className="editorial-grain" aria-hidden="true" />
 
         <div className="refined-hero">
+          <div className="hero-back-glow" aria-hidden="true" />
+          <div className="hero-lower-depth" aria-hidden="true" />
           <div className="hero-floor-light" aria-hidden="true" />
 
           <div className="refined-copy refined-type-back">
@@ -84,8 +86,12 @@ export default function Home() {
             </h1>
           </div>
 
+          <div className="hero-contact-shadow" aria-hidden="true" />
+          <div className="hero-character-reflection" aria-hidden="true">
+            <img src="/theo-avatar-hero-crop.png" alt="" />
+          </div>
+
           <div className="refined-stage refined-avatar-stage">
-            <div className="refined-halo" aria-hidden="true" />
             <div className="refined-visual refined-avatar">
               <img
                 src="/theo-avatar-hero-crop.png"
