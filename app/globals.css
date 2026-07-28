@@ -867,6 +867,127 @@ a {
   .footer-bar { bottom: 24px; }
 }
 
+/* Final Hero calibration — matched to the approved editorial reference. */
+.hero-editorial-root {
+  background: #050506;
+  border-color: rgba(235, 232, 241, .28);
+}
+
+.hero-editorial-root::before {
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 26% 51% at 51% 52%, rgba(128, 94, 192, .26), transparent 70%),
+    radial-gradient(ellipse 19% 16% at 51% 84%, rgba(151, 111, 232, .21), transparent 74%),
+    linear-gradient(90deg, #050506 0%, rgba(5,5,6,.78) 16%, transparent 40%, transparent 63%, rgba(5,5,6,.88) 88%, #050506 100%);
+}
+
+/* The reference is a black editorial stage. Keep Aurora mounted for motion,
+   but make it an almost imperceptible violet breathing light rather than a backdrop. */
+.hero-aurora-background {
+  z-index: 0;
+  inset: 40% 37% 12% 36%;
+  opacity: .08;
+  filter: saturate(.62) brightness(.72);
+}
+
+.editorial-grain { z-index: 1; opacity: .045; }
+
+.refined-copy {
+  z-index: 3;
+  top: 21.5%;
+  left: 10.4%;
+  width: 62%;
+}
+
+.refined-name {
+  font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  font-size: clamp(160px, 16.25vw, 300px) !important;
+  font-weight: 500 !important;
+  line-height: .72 !important;
+  letter-spacing: -.095em !important;
+  color: #e5e2e9;
+}
+
+.refined-name span {
+  color: #e7e4ea !important;
+  text-shadow: 0 1px 14px rgba(255,255,255,.12);
+}
+
+.refined-name .hero-title-zhou {
+  margin-top: .19em;
+  color: rgba(218, 214, 226, .82) !important;
+}
+
+.hero-portfolio {
+  z-index: 8;
+  top: 72%;
+  left: 1.5%;
+  color: #a074ff;
+  font-family: Arial, "PingFang SC", sans-serif;
+  font-size: clamp(32px, 4vw, 72px);
+  font-weight: 400;
+  letter-spacing: .44em;
+  text-shadow: 0 0 18px rgba(141, 92, 255, .35);
+}
+
+.refined-stage {
+  z-index: 7;
+  left: 52%;
+  bottom: 7.2%;
+  width: min(28vw, 430px);
+  height: min(72vh, 710px);
+}
+
+.refined-halo {
+  z-index: -1;
+  width: 185%;
+  height: 36%;
+  bottom: 3%;
+  background: radial-gradient(ellipse, rgba(183, 143, 255, .46), rgba(108, 75, 168, .14) 46%, transparent 72%);
+  filter: blur(30px);
+}
+
+/* Never use screen blend here: it erased the dark-haired avatar against the black stage. */
+.refined-avatar,
+.refined-avatar-stage { overflow: visible; }
+.refined-avatar img {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: saturate(.78) contrast(1.1) brightness(.94);
+  transform: scale(1.15);
+}
+.refined-avatar::after { z-index: 3; background: linear-gradient(180deg, transparent 62%, rgba(5,5,6,.05) 79%, rgba(5,5,6,.42) 100%); }
+.refined-avatar .refined-visual-wash { z-index: 4; background: linear-gradient(180deg, transparent 67%, rgba(5,5,6,.30)); }
+
+.refined-side-note {
+  z-index: 8;
+  right: 8.2%;
+  top: 44.2%;
+  color: rgba(237, 234, 240, .78);
+}
+.refined-side-note .side-role { font-size: 16px; letter-spacing: .035em; }
+.refined-side-note .side-statement { color: rgba(237, 234, 240, .48); }
+
+.hero-progress { z-index: 9; left: 3.8%; }
+.refined-footer { z-index: 9; }
+
+@media (max-width: 1050px) {
+  .refined-copy { left: 7%; width: 70%; }
+  .refined-name { font-size: clamp(126px, 16.2vw, 205px) !important; }
+  .refined-stage { left: 52%; width: min(33vw, 380px); }
+}
+
+@media (max-width: 760px) {
+  .hero-aurora-background { opacity: .06; inset: 44% 8% 10%; }
+  .refined-copy { top: 22%; left: 7%; width: 92%; }
+  .refined-name { font-size: clamp(89px, 23vw, 150px) !important; }
+  .refined-stage { left: 56%; bottom: 10%; width: min(64vw, 310px); height: 57vh; }
+  .refined-avatar img { transform: scale(1.13); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
