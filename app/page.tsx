@@ -55,26 +55,26 @@ export default function Home() {
   return (
     <main>
       <CursorGlow />
-      <nav className="editorial-nav shell" aria-label="主导航">
-        <a className="editorial-logo" href="#home" aria-label="返回首页">
-          <span>THEO ZHOU</span>
-        </a>
-        <div className="editorial-nav-links">
-          <a href="#projects">WORKS</a>
-          <a href="#about">ABOUT</a>
-          <a href="#strengths">SERVICES</a>
-          <a href="#projects">JOURNAL</a>
-          <a href="#contact">CONTACT</a>
-        </div>
-        <a className="hero-menu" href="#contact" aria-label="联系 Theo">
-          <span aria-hidden="true">···</span>
-        </a>
-      </nav>
-
       <section className="hero hero-editorial-root" id="home">
+        <nav className="editorial-nav" aria-label="主导航">
+          <a className="editorial-logo" href="#home" aria-label="返回首页">
+            THEO ZHOU
+          </a>
+          <div className="editorial-nav-links">
+            <a href="#projects">WORKS</a>
+            <a href="#about">ABOUT</a>
+            <a href="#strengths">SERVICES</a>
+            <a href="#projects">JOURNAL</a>
+            <a href="#contact">CONTACT</a>
+          </div>
+          <a className="hero-menu" href="#contact" aria-label="联系 Theo">
+            <span aria-hidden="true">•••</span>
+          </a>
+        </nav>
+
         <div className="editorial-grain" aria-hidden="true" />
 
-        <div className="refined-hero shell">
+        <div className="refined-hero">
           <div className="refined-copy refined-type-back">
             <h1 className="refined-name" aria-label="THEO ZHOU PORTFOLIO">
               <span className="hero-title-theo">THEO</span>
