@@ -1,4 +1,3 @@
-import Aurora from "./Aurora";
 import { CursorGlow, ImageReveal, Reveal, TextReveal, TiltCard } from "./Animation";
 
 const projects = [
@@ -73,7 +72,6 @@ export default function Home() {
       </nav>
 
       <section className="hero hero-editorial-root" id="home">
-        <Aurora />
         <div className="editorial-grain" aria-hidden="true" />
 
         <div className="refined-hero shell">
@@ -87,13 +85,13 @@ export default function Home() {
 
           <div className="refined-stage refined-avatar-stage">
             <div className="refined-halo" aria-hidden="true" />
-            <ImageReveal className="refined-visual refined-avatar" delay={0.12}>
+            <div className="refined-visual refined-avatar">
               <img
                 src="/theo-avatar-v2.png"
                 alt="Theo 的灰色西装 Q 版个人形象"
               />
               <div className="refined-visual-wash" aria-hidden="true" />
-            </ImageReveal>
+            </div>
           </div>
 
           <div className="refined-side-note">
