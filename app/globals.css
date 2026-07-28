@@ -1606,8 +1606,9 @@ a {
 
 /* Refined hero — editorial title, sculptural focal point, moving work strip */
 .hero-editorial-root {
-  min-height: clamp(720px, 82svh, 920px);
-  padding-bottom: 278px;
+  /* A true screen-sized hero: the extra height is intentionally left quiet. */
+  min-height: max(780px, 100svh);
+  padding-bottom: 306px;
   background:
     radial-gradient(circle at 55% 48%, rgba(110, 61, 214, .055), transparent 23%),
     linear-gradient(145deg, #08070a 0%, #0b0910 58%, #070608 100%);
@@ -1616,10 +1617,10 @@ a {
 .hero-aurora-background {
   position: absolute;
   z-index: 0;
-  inset: 31% 24% 23% 37%;
+  inset: 23% 17% 21% 42%;
   overflow: hidden;
   pointer-events: none;
-  opacity: .24;
+  opacity: .18;
   background:
     radial-gradient(ellipse at 65% 38%, rgba(114, 67, 220, .10), transparent 28%),
     radial-gradient(ellipse at 36% 64%, rgba(60, 32, 124, .07), transparent 32%);
@@ -1727,19 +1728,20 @@ a {
 .refined-hero {
   position: relative;
   z-index: 3;
-  min-height: calc(clamp(720px, 82svh, 920px) - 278px);
+  min-height: calc(max(780px, 100svh) - 306px);
   display: grid;
-  grid-template-columns: minmax(460px, .78fr) minmax(400px, 1.18fr) minmax(110px, .22fr);
+  grid-template-columns: minmax(460px, .78fr) minmax(430px, 1.28fr) minmax(110px, .22fr);
   align-items: center;
   gap: clamp(20px, 2.2vw, 42px);
-  padding-top: 112px;
+  padding-top: 126px;
+  padding-bottom: 34px;
 }
 
 .refined-copy {
   position: relative;
   z-index: 5;
   align-self: center;
-  padding: 2vh 0 0;
+  padding: 1vh 0 4vh;
 }
 
 .refined-index {
@@ -1818,8 +1820,8 @@ a {
 
 .refined-stage {
   position: relative;
-  height: min(28vh, 280px);
-  min-height: 220px;
+  height: min(35vh, 350px);
+  min-height: 260px;
   display: grid;
   place-items: center;
 }
@@ -1827,8 +1829,8 @@ a {
 .refined-halo {
   position: absolute;
   z-index: -1;
-  width: min(49vw, 720px);
-  height: min(18vw, 260px);
+  width: min(53vw, 790px);
+  height: min(20vw, 300px);
   border-radius: 999px;
   background:
     linear-gradient(90deg, transparent 0%, rgba(130, 76, 234, .13) 25%, rgba(182, 108, 255, .34) 51%, rgba(105, 57, 205, .10) 76%, transparent 100%);
@@ -1911,8 +1913,8 @@ a {
   z-index: 10;
   left: 0;
   right: 0;
-  bottom: 42px;
-  height: 240px;
+  bottom: 46px;
+  height: 254px;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, .1);
   border-bottom: 1px solid rgba(255, 255, 255, .1);
@@ -1939,8 +1941,8 @@ a {
 
 .hero-work-card {
   position: relative;
-  width: 162px;
-  height: 216px;
+  width: 174px;
+  height: 232px;
   flex: 0 0 auto;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, .12);
@@ -1983,7 +1985,7 @@ a {
   position: absolute;
   z-index: 12;
   left: 50%;
-  bottom: 12px;
+  bottom: 13px;
   height: 28px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -2004,13 +2006,13 @@ a {
     grid-template-columns: minmax(400px, 1fr) minmax(350px, .78fr);
   }
   .refined-side-note { display: none; }
-  .refined-name { font-size: clamp(84px, 12vw, 132px) !important; }
+  .refined-name { font-size: clamp(72px, 10.5vw, 112px) !important; }
   .refined-visual { width: min(36vw, 390px); min-width: 300px; }
 }
 
 @media (max-width: 760px) {
   .hero-editorial-root {
-    min-height: 760px;
+    min-height: max(760px, 100svh);
     padding-bottom: 142px;
   }
   .hero-aurora-background {
@@ -2026,7 +2028,7 @@ a {
   }
   .editorial-contact { padding-left: 0; }
   .refined-hero {
-    min-height: 618px;
+    min-height: calc(max(760px, 100svh) - 142px);
     display: block;
     padding-top: 68px;
   }
