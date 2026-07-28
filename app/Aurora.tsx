@@ -123,9 +123,9 @@ const DEFAULT_COLOR_STOPS: [string, string, string] = ["#30116f", "#8d5cff", "#4
 
 export default function Aurora({
   colorStops = DEFAULT_COLOR_STOPS,
-  amplitude = 1.28,
-  blend = 0.62,
-  speed = 0.82,
+  amplitude = 0.64,
+  blend = 0.31,
+  speed = 0.66,
 }: AuroraProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 

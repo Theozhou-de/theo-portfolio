@@ -88,14 +88,14 @@ export default function Home() {
         <div className="refined-hero shell">
           <div className="refined-copy">
             <p className="refined-index">PORTFOLIO / 2026</p>
-            <h1 className="refined-name" aria-label="Theo Zhou">
-              <span>THEO</span>
-              <span>ZHOU</span>
+            <h1 className="refined-name" aria-label="THEOZHOU PORTFOLIO">
+              <span>THEOZHOU</span>
+              <span>PORTFOLIO</span>
             </h1>
             <div className="refined-role">
               <span className="refined-dot" aria-hidden="true" />
-              <p>AIGC CONTENT EXPERT<br />&amp; PROJECT PM</p>
-              <small>将创意、AI 与商业结果连接起来</small>
+              <p>AIGC内容专家/AIGC项目PM</p>
+              <small>内燃机的发明不是为了让马车夫失业，而你可以选择手握方向盘</small>
             </div>
           </div>
 
