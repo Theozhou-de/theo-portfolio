@@ -99,15 +99,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="refined-stage">
+          <div className="refined-stage refined-avatar-stage">
             <div className="refined-halo" aria-hidden="true" />
-            <ImageReveal className="refined-visual">
+            <span className="avatar-title avatar-title-back" aria-hidden="true">THEO</span>
+            <ImageReveal className="refined-visual refined-avatar">
               <img
-                src="/theo-hero-obsidian.png"
-                alt="黑曜石与紫色晶体融合的生成艺术雕塑，象征将创意转化为结构化成果"
+                src="/theo-avatar-v2.png"
+                alt="Theo 的灰色西装 Q 版个人形象"
               />
               <div className="refined-visual-wash" aria-hidden="true" />
             </ImageReveal>
+            <span className="avatar-title avatar-title-front" aria-hidden="true">ZHOU</span>
             <span className="refined-star star-one" aria-hidden="true">✦</span>
             <span className="refined-star star-two" aria-hidden="true">✦</span>
           </div>
