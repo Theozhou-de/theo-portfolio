@@ -728,45 +728,46 @@ a {
 
 .refined-name {
   margin: 0;
-  color: transparent;
   font-family: "Bodoni Moda", Didot, "Bodoni 72", "Bodoni MT", serif;
   font-size: clamp(190px, 18vw, 350px);
   font-weight: 400;
   line-height: 0.82;
   letter-spacing: -0.055em;
-  text-rendering: geometricPrecision;
-  text-shadow:
-    0 0 1px rgba(255, 255, 255, 0.22),
-    0 10px 35px rgba(83, 67, 122, 0.1);
-  background-image: linear-gradient(
-    to bottom,
-    rgba(236, 233, 242, 0.9) 0%,
-    rgba(218, 212, 229, 0.78) 27%,
-    rgba(180, 169, 201, 0.53) 54%,
-    rgba(123, 107, 150, 0.27) 77%,
-    rgba(66, 51, 88, 0.075) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-rendering: optimizeLegibility;
 }
 
 .refined-name span {
   display: block;
   width: max-content;
   color: transparent;
-  background: none;
-  background-clip: inherit;
-  -webkit-background-clip: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform-origin: left center;
+  text-shadow: none;
+  filter: none;
+  isolation: isolate;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 .refined-name .hero-title-theo {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(238, 236, 243, 0.94) 0%,
+    rgba(224, 220, 232, 0.88) 46%,
+    rgba(190, 181, 207, 0.68) 100%
+  );
   transform: scaleX(1.07);
 }
 
 .refined-name .hero-title-zhou {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(199, 192, 215, 0.68) 0%,
+    rgba(158, 146, 181, 0.48) 48%,
+    rgba(91, 76, 116, 0.17) 100%
+  );
   transform: scaleX(1.22);
 }
 
