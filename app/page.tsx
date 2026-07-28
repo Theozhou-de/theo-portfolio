@@ -88,13 +88,13 @@ export default function Home() {
 
           <div className="hero-contact-shadow" aria-hidden="true" />
           <div className="hero-character-reflection" aria-hidden="true">
-            <img src="/theo-avatar-hero-crop.png" alt="" />
+            <img src="/theo-avatar-hero-v3.png" alt="" />
           </div>
 
           <div className="refined-stage refined-avatar-stage">
             <div className="refined-visual refined-avatar">
               <img
-                src="/theo-avatar-hero-crop.png"
+                src="/theo-avatar-hero-v3.png"
                 alt="Theo 的灰色西装 Q 版个人形象"
               />
             </div>

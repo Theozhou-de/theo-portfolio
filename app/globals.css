@@ -812,7 +812,7 @@ a {
   bottom: 8%;
   height: 80%;
   width: auto;
-  aspect-ratio: 386 / 1483;
+  aspect-ratio: 332 / 961;
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -888,7 +888,7 @@ a {
   bottom: 6.95%;
   height: 80%;
   width: auto;
-  aspect-ratio: 386 / 1483;
+  aspect-ratio: 332 / 961;
   overflow: hidden;
   opacity: 0.095;
   transform: translateX(-50%) scaleY(-0.15);
