@@ -75,6 +75,8 @@ export default function Home() {
         <div className="editorial-grain" aria-hidden="true" />
 
         <div className="refined-hero">
+          <div className="hero-floor-light" aria-hidden="true" />
+
           <div className="refined-copy refined-type-back">
             <h1 className="refined-name" aria-label="THEO ZHOU PORTFOLIO">
               <span className="hero-title-theo">THEO</span>
@@ -86,7 +88,7 @@ export default function Home() {
             <div className="refined-halo" aria-hidden="true" />
             <div className="refined-visual refined-avatar">
               <img
-                src="/theo-avatar-cutout.png"
+                src="/theo-avatar-hero-crop.png"
                 alt="Theo 的灰色西装 Q 版个人形象"
               />
             </div>
