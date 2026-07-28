@@ -52,32 +52,23 @@ const strengths = [
   },
 ];
 
-const heroWorks = [
-  { src: "/theo-hero-obsidian.png", label: "OBSIDIAN / 01", position: "50% 48%" },
-  { src: "/theo-hero-scene.png", label: "VIOLET WORLD", position: "50% 66%" },
-  { src: "/theo-hero-visual.png", label: "MATERIAL / 01", position: "50% 72%" },
-  { src: "/theo-hero-scene.png", label: "AI LANDSCAPE", position: "50% 42%" },
-  { src: "/theo-hero-obsidian.png", label: "GENERATIVE FORM", position: "50% 38%" },
-];
-
 export default function Home() {
   return (
     <main>
       <CursorGlow />
       <nav className="editorial-nav shell" aria-label="主导航">
         <a className="editorial-logo" href="#home" aria-label="返回首页">
-          <span>THEO</span>
-          <i>/</i>
-          <span>ZHOU</span>
+          <span>THEO ZHOU</span>
         </a>
         <div className="editorial-nav-links">
-          <a href="#projects">WORK</a>
+          <a href="#projects">WORKS</a>
           <a href="#about">ABOUT</a>
-          <a href="#strengths">EXPERTISE</a>
+          <a href="#strengths">SERVICES</a>
+          <a href="#projects">JOURNAL</a>
+          <a href="#contact">CONTACT</a>
         </div>
-        <a className="editorial-contact" href="#contact">
-          <span>LET&apos;S TALK</span>
-          <b aria-hidden="true">↗</b>
+        <a className="hero-menu" href="#contact" aria-label="联系 Theo">
+          <span aria-hidden="true">···</span>
         </a>
       </nav>
 
@@ -87,54 +78,36 @@ export default function Home() {
 
         <div className="refined-hero shell">
           <div className="refined-copy">
-            <p className="refined-index">PORTFOLIO / 2026</p>
-            <h1 className="refined-name" aria-label="THEOZHOU PORTFOLIO">
-              <span>THEOZHOU</span>
-              <span>PORTFOLIO</span>
+            <h1 className="refined-name" aria-label="THEO ZHOU PORTFOLIO">
+              <span className="hero-title-theo">THEO</span>
+              <span className="hero-title-zhou">ZHOU</span>
             </h1>
-            <div className="refined-role">
-              <span className="refined-dot" aria-hidden="true" />
-              <p>AIGC内容专家/AIGC项目PM</p>
-              <small>内燃机的发明不是为了让马车夫失业，而你可以选择手握方向盘</small>
-            </div>
+            <p className="hero-portfolio">PORTFOLIO</p>
           </div>
 
           <div className="refined-stage refined-avatar-stage">
             <div className="refined-halo" aria-hidden="true" />
-            <span className="avatar-title avatar-title-back" aria-hidden="true">THEO</span>
-            <ImageReveal className="refined-visual refined-avatar">
+            <ImageReveal className="refined-visual refined-avatar" delay={0.12}>
               <img
                 src="/theo-avatar-v2.png"
                 alt="Theo 的灰色西装 Q 版个人形象"
               />
               <div className="refined-visual-wash" aria-hidden="true" />
             </ImageReveal>
-            <span className="avatar-title avatar-title-front" aria-hidden="true">ZHOU</span>
-            <span className="refined-star star-one" aria-hidden="true">✦</span>
-            <span className="refined-star star-two" aria-hidden="true">✦</span>
           </div>
 
           <div className="refined-side-note">
-            <p>CREATIVE DIRECTION<br />AI WORKFLOW<br />PROJECT DELIVERY</p>
-            <span>SHANGHAI · CHINA</span>
+            <p className="side-role">AIGC CONTENT EXPERT<br /><b>/</b>&nbsp; PROJECT PM</p>
+            <span className="side-statement">AI-DRIVEN CONTENT.<br />CREATIVE SOLUTIONS.<br />MEASURABLE IMPACT.</span>
           </div>
         </div>
 
-        <div className="hero-marquee" aria-label="精选作品预览">
-          <div className="hero-marquee-track">
-            {[...heroWorks, ...heroWorks].map((work, index) => (
-              <a className="hero-work-card" href="#projects" key={`${work.label}-${index}`}>
-                <img src={work.src} alt="" style={{ objectPosition: work.position }} />
-                <span>{String((index % heroWorks.length) + 1).padStart(2, "0")} / {work.label}</span>
-              </a>
-            ))}
-          </div>
-        </div>
+        <div className="hero-progress" aria-hidden="true"><span className="active" /><span /><span /><i /></div>
 
         <div className="refined-footer shell">
-          <a href="#about"><span>SCROLL TO EXPLORE</span><b aria-hidden="true">↓</b></a>
-          <p>SELECTED WORKS · PERSONAL ARCHIVE</p>
-          <span>© 2026</span>
+          <a href="#about"><span>SCROLL<br />DOWN</span><b aria-hidden="true">↓</b></a>
+          <p />
+          <span className="hero-page">01 <i /></span>
         </div>
       </section>
 
