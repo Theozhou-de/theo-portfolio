@@ -45,7 +45,7 @@ export default function HeroLiquidEther() {
       {LiquidEther ? (
         <LiquidEther
           className="hero-liquid-ether"
-          colors={["#5227FF", "#FF9FFC", "#B497CF"]}
+          colors={["#B79CFF", "#E6D9FF", "#FFFBFF"]}
           mouseForce={13}
           cursorSize={45}
           isViscous
