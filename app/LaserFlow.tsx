@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import * as THREE from "three";
+import type { IUniform, Vector3, Vector4 } from "three";
 
 type LaserFlowProps = {
   className?: string;
@@ -324,7 +324,7 @@ void main(){
 }
 `;
 
-type LaserUniforms = Record<string, THREE.IUniform>;
+type LaserUniforms = Record<string, IUniform>;
 
 export default function LaserFlow({
   className,
@@ -388,6 +388,13 @@ export default function LaserFlow({
       return;
     }
 
+    let cancelled = false;
+    let teardown: (() => void) | undefined;
+
+    void import("three")
+      .then((THREE) => {
+        if (cancelled) return;
+
     const renderer = new THREE.WebGLRenderer({
       antialias: false,
       alpha: false,
@@ -427,6 +434,7 @@ export default function LaserFlow({
       ),
     );
 
+    const initialColor = hexToRGB(color);
     const uniforms: LaserUniforms = {
       iTime: { value: 0 },
       iResolution: { value: new THREE.Vector3(1, 1, 1) },
@@ -448,7 +456,13 @@ export default function LaserFlow({
       uDecay: { value: decay },
       uFalloffStart: { value: falloffStart },
       uFogFallSpeed: { value: fogFallSpeed },
-      uColor: { value: new THREE.Vector3(1, 1, 1) },
+      uColor: {
+        value: new THREE.Vector3(
+          initialColor.r,
+          initialColor.g,
+          initialColor.b,
+        ),
+      },
       uFade: { value: hasFadedRef.current ? 1 : 0 },
     };
     uniformsRef.current = uniforms;
@@ -512,7 +526,7 @@ export default function LaserFlow({
       };
       renderer.setPixelRatio(pixelRatio);
       renderer.setSize(width, height, false);
-      (uniforms.iResolution.value as THREE.Vector3).set(
+      (uniforms.iResolution.value as Vector3).set(
         width * pixelRatio,
         height * pixelRatio,
         pixelRatio,
@@ -649,7 +663,7 @@ export default function LaserFlow({
       const smoothingTime = Math.max(1e-3, mouseSmoothTime);
       const alpha = 1 - Math.exp(-clampedDelta / smoothingTime);
       mouseSmooth.lerp(mouseTarget, alpha);
-      (uniforms.iMouse.value as THREE.Vector4).set(
+      (uniforms.iMouse.value as Vector4).set(
         mouseSmooth.x,
         mouseSmooth.y,
         0,
@@ -662,7 +676,7 @@ export default function LaserFlow({
 
     animate();
 
-    return () => {
+    teardown = () => {
       cancelAnimationFrame(animationFrame);
       cancelAnimationFrame(resizeFrame);
       resizeObserver.disconnect();
@@ -680,6 +694,15 @@ export default function LaserFlow({
       renderer.forceContextLoss();
       uniformsRef.current = null;
       if (mount.contains(canvas)) mount.removeChild(canvas);
+    };
+      })
+      .catch(() => {
+        if (!cancelled) mount.dataset.fallback = "true";
+      });
+
+    return () => {
+      cancelled = true;
+      teardown?.();
     };
   }, [
     alignToHeroFloor,
@@ -713,7 +736,7 @@ export default function LaserFlow({
     uniforms.uFogFallSpeed.value = fogFallSpeed;
 
     const { r, g, b } = hexToRGB(color);
-    (uniforms.uColor.value as THREE.Vector3).set(r, g, b);
+    (uniforms.uColor.value as Vector3).set(r, g, b);
   }, [
     alignToHeroFloor,
     color,
