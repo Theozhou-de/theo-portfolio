@@ -871,11 +871,13 @@ a {
 }
 
 .hero-carpet::before {
-  opacity: 0.4;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 320 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='carpet'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.48 1.15' numOctaves='5' seed='12' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23carpet)' opacity='.85'/%3E%3C/svg%3E");
-  background-size: 410px 230px;
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 480 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='carpet'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.08 .46' numOctaves='4' seed='12' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23carpet)' opacity='.72'/%3E%3C/svg%3E");
+  background-size: 620px 360px;
   mix-blend-mode: screen;
-  filter: contrast(1.4) brightness(0.72);
+  filter: contrast(1.22) brightness(0.72) blur(0.25px);
+  -webkit-mask-image: radial-gradient(ellipse 74% 96% at 56% 35%, #000 0%, rgba(0, 0, 0, 0.8) 56%, transparent 100%);
+  mask-image: radial-gradient(ellipse 74% 96% at 56% 35%, #000 0%, rgba(0, 0, 0, 0.8) 56%, transparent 100%);
 }
 
 .hero-carpet::after {
@@ -887,8 +889,8 @@ a {
       transparent 20px 37px
     ),
     radial-gradient(ellipse 50% 18% at 56% 39%, rgba(211, 190, 239, 0.11), transparent 74%);
-  opacity: 0.82;
-  filter: blur(0.45px);
+  opacity: 0.6;
+  filter: blur(0.7px);
 }
 
 .refined-stage {
