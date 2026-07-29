@@ -2,7 +2,25 @@
 
 import { useEffect, useState } from "react";
 import type { ComponentType } from "react";
-import type { LiquidEtherProps } from "./LiquidEther";
+
+interface LiquidEtherProps {
+  className?: string;
+  colors?: string[];
+  mouseForce?: number;
+  cursorSize?: number;
+  isViscous?: boolean;
+  viscous?: number;
+  iterationsViscous?: number;
+  iterationsPoisson?: number;
+  resolution?: number;
+  isBounce?: boolean;
+  autoDemo?: boolean;
+  autoSpeed?: number;
+  autoIntensity?: number;
+  takeoverDuration?: number;
+  autoResumeDelay?: number;
+  autoRampDuration?: number;
+}
 
 export default function HeroLiquidEther() {
   const [LiquidEther, setLiquidEther] =
@@ -42,9 +60,6 @@ export default function HeroLiquidEther() {
           takeoverDuration={0.25}
           autoResumeDelay={3000}
           autoRampDuration={0.6}
-          color0="#000000"
-          color1="#ceacf5"
-          color2="#000000"
         />
       ) : null}
     </div>
