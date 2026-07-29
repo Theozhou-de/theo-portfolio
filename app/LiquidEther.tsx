@@ -26,6 +26,9 @@ export interface LiquidEtherProps {
   takeoverDuration?: number;
   autoResumeDelay?: number;
   autoRampDuration?: number;
+  color0?: string;
+  color1?: string;
+  color2?: string;
 }
 
 interface SimOptions {
@@ -78,7 +81,10 @@ export default function LiquidEther({
   autoIntensity = 2.2,
   takeoverDuration = 0.25,
   autoResumeDelay = 1000,
-  autoRampDuration = 0.6
+  autoRampDuration = 0.6,
+  color0,
+  color1,
+  color2
 }: LiquidEtherProps): React.ReactElement {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const webglRef = useRef<LiquidEtherWebGL | null>(null);
@@ -1250,5 +1256,17 @@ export default function LiquidEther({
     autoRampDuration
   ]);
 
-  return <div ref={mountRef} className={`liquid-ether-container ${className || ''}`} style={style} />;
+  return (
+    <div
+      ref={mountRef}
+      className={`liquid-ether-container ${className || ''}`}
+      style={{
+        ...style,
+        background:
+          color0 && color1 && color2
+            ? `linear-gradient(90deg, ${color0}, ${color1}, ${color2})`
+            : style.background
+      }}
+    />
+  );
 }

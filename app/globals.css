@@ -611,117 +611,12 @@ a {
 }
 
 .hero-liquid-layer {
-  --liquid-pointer-x: 56%;
-  --liquid-pointer-y: 49%;
   position: absolute;
   z-index: 0;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
   background: #000;
-}
-
-.hero-liquid-base,
-.hero-liquid-ether {
-  position: absolute;
-  inset: 0;
-}
-
-.hero-liquid-base {
-  overflow: hidden;
-  background:
-    radial-gradient(
-      ellipse 48% 72% at 56% 49%,
-      rgba(206, 172, 245, 0.17) 0%,
-      rgba(82, 39, 255, 0.075) 41%,
-      transparent 76%
-    ),
-    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.18) 48%, #000 100%);
-}
-
-.hero-liquid-base::before,
-.hero-liquid-base::after {
-  content: "";
-  position: absolute;
-  left: var(--liquid-pointer-x);
-  top: var(--liquid-pointer-y);
-  width: min(84vw, 1140px);
-  aspect-ratio: 1.45;
-  border-radius: 42% 58% 61% 39% / 52% 38% 62% 48%;
-  pointer-events: none;
-  will-change: transform, border-radius;
-  transition: left 900ms cubic-bezier(.22, 1, .36, 1), top 900ms cubic-bezier(.22, 1, .36, 1);
-}
-
-.hero-liquid-base::before {
-  opacity: 0.48;
-  background:
-    radial-gradient(circle at 28% 37%, rgba(255, 159, 252, 0.36), transparent 25%),
-    radial-gradient(circle at 66% 57%, rgba(180, 151, 207, 0.34), transparent 34%),
-    conic-gradient(from 210deg, transparent 0 12%, rgba(82, 39, 255, 0.62) 30%, rgba(255, 159, 252, 0.24) 47%, transparent 68% 100%);
-  filter: blur(58px) saturate(1.12);
-  mix-blend-mode: screen;
-  animation: hero-liquid-drift-primary 13s ease-in-out infinite alternate;
-}
-
-.hero-liquid-base::after {
-  width: min(66vw, 900px);
-  opacity: 0.34;
-  background:
-    radial-gradient(ellipse at 58% 45%, rgba(206, 172, 245, 0.45), transparent 35%),
-    conic-gradient(from 25deg, rgba(82, 39, 255, 0.05), rgba(82, 39, 255, 0.54), transparent 57%, rgba(255, 159, 252, 0.22));
-  filter: blur(76px);
-  mix-blend-mode: lighten;
-  animation: hero-liquid-drift-secondary 17s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes hero-liquid-drift-primary {
-  0% {
-    transform: translate(-58%, -52%) rotate(-11deg) scale(0.92, 1.05);
-    border-radius: 42% 58% 61% 39% / 52% 38% 62% 48%;
-  }
-  45% {
-    transform: translate(-47%, -45%) rotate(9deg) scale(1.08, 0.91);
-    border-radius: 61% 39% 44% 56% / 38% 57% 43% 62%;
-  }
-  100% {
-    transform: translate(-53%, -55%) rotate(25deg) scale(0.96, 1.12);
-    border-radius: 37% 63% 55% 45% / 61% 42% 58% 39%;
-  }
-}
-
-@keyframes hero-liquid-drift-secondary {
-  0% {
-    transform: translate(-43%, -62%) rotate(16deg) scale(1.08, 0.86);
-  }
-  52% {
-    transform: translate(-62%, -42%) rotate(-17deg) scale(0.9, 1.14);
-  }
-  100% {
-    transform: translate(-49%, -53%) rotate(-34deg) scale(1.12, 0.94);
-  }
-}
-
-.hero-liquid-ether {
-  opacity: 0.82;
-  filter: saturate(0.94) contrast(1.08);
-  -webkit-mask-image: radial-gradient(
-    ellipse 84% 88% at 56% 49%,
-    #000 0%,
-    rgba(0, 0, 0, 0.94) 52%,
-    transparent 100%
-  );
-  mask-image: radial-gradient(
-    ellipse 84% 88% at 56% 49%,
-    #000 0%,
-    rgba(0, 0, 0, 0.94) 52%,
-    transparent 100%
-  );
-}
-
-.hero-liquid-ether canvas {
-  width: 100% !important;
-  height: 100% !important;
 }
 
 .editorial-grain {
