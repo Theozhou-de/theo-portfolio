@@ -75,8 +75,10 @@ export default function Home() {
         <div className="editorial-grain" aria-hidden="true" />
 
         <div className="refined-hero">
+          <div className="hero-top-light" aria-hidden="true" />
           <div className="hero-back-glow" aria-hidden="true" />
           <div className="hero-lower-depth" aria-hidden="true" />
+          <div className="hero-carpet" aria-hidden="true" />
           <div className="hero-floor-light" aria-hidden="true" />
 
           <div className="refined-copy refined-type-back">
