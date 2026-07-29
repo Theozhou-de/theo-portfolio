@@ -710,6 +710,9 @@ a {
 }
 
 .refined-hero {
+  --hero-character-x: 56%;
+  --hero-floor-y: 7.6%;
+  --hero-character-height: 80%;
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -866,34 +869,34 @@ a {
 }
 
 .hero-carpet::before {
-  opacity: 0.13;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 480 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='carpet'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.08 .46' numOctaves='4' seed='12' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23carpet)' opacity='.72'/%3E%3C/svg%3E");
-  background-size: 720px 420px;
+  opacity: 0.085;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 360 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='carpet'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.18 .82' numOctaves='2' seed='12' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23carpet)' opacity='.5'/%3E%3C/svg%3E");
+  background-size: 360px 220px;
   mix-blend-mode: screen;
-  filter: contrast(1.05) brightness(0.66) blur(0.55px);
-  -webkit-mask-image: radial-gradient(ellipse 46% 72% at 56% 28%, #000 0%, rgba(0, 0, 0, 0.66) 52%, transparent 100%);
-  mask-image: radial-gradient(ellipse 46% 72% at 56% 28%, #000 0%, rgba(0, 0, 0, 0.66) 52%, transparent 100%);
+  filter: contrast(0.86) brightness(0.72) blur(0.7px);
+  -webkit-mask-image: radial-gradient(ellipse 35% 58% at 56% 30%, #000 0%, rgba(0, 0, 0, 0.55) 42%, transparent 100%);
+  mask-image: radial-gradient(ellipse 35% 58% at 56% 30%, #000 0%, rgba(0, 0, 0, 0.55) 42%, transparent 100%);
 }
 
 .hero-carpet::after {
   background:
     repeating-linear-gradient(
       104deg,
-      transparent 0 17px,
-      rgba(225, 211, 244, 0.018) 18px 19px,
-      transparent 20px 37px
+      transparent 0 25px,
+      rgba(225, 211, 244, 0.012) 26px 27px,
+      transparent 28px 54px
     ),
-    radial-gradient(ellipse 50% 18% at 56% 39%, rgba(211, 190, 239, 0.11), transparent 74%);
-  opacity: 0.32;
-  filter: blur(0.9px);
+    radial-gradient(ellipse 38% 15% at 56% 35%, rgba(184, 165, 210, 0.065), transparent 74%);
+  opacity: 0.24;
+  filter: blur(1.2px);
 }
 
 .refined-stage {
   position: absolute;
   z-index: 3;
-  left: 56%;
-  bottom: 8%;
-  height: 80%;
+  left: var(--hero-character-x);
+  bottom: var(--hero-floor-y);
+  height: var(--hero-character-height);
   width: auto;
   aspect-ratio: 386 / 1483;
   transform: translateX(-50%);
@@ -924,79 +927,94 @@ a {
     drop-shadow(0 18px 26px rgba(0, 0, 0, 0.5));
 }
 
-.hero-floor-light {
+.hero-grounding {
   position: absolute;
   z-index: 2;
-  left: 56%;
-  bottom: 3.2%;
-  width: min(54vw, 980px);
-  height: min(12vh, 124px);
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      ellipse 60% 40% at 50% 38%,
-      rgba(211, 195, 233, 0.34) 0%,
-      rgba(156, 129, 195, 0.25) 25%,
-      rgba(96, 70, 139, 0.15) 51%,
-      rgba(47, 33, 73, 0.06) 70%,
-      transparent 86%
-    ),
-    radial-gradient(
-      ellipse 82% 68% at 50% 43%,
-      rgba(103, 78, 145, 0.1),
-      transparent 80%
-    );
-  filter: blur(18px);
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-.hero-contact-shadow {
-  position: absolute;
-  z-index: 2;
-  left: 56%;
-  bottom: 7.45%;
-  width: 184px;
-  height: 18px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.99) 0%,
-    rgba(5, 3, 8, 0.94) 43%,
-    rgba(30, 20, 43, 0.42) 72%,
-    transparent 100%
-  );
-  filter: blur(4px);
-  pointer-events: none;
-}
-
-.hero-character-reflection {
-  position: absolute;
-  z-index: 2;
-  left: 56%;
-  bottom: 7.15%;
-  height: 80%;
+  left: var(--hero-character-x);
+  bottom: var(--hero-floor-y);
+  height: var(--hero-character-height);
   width: auto;
   aspect-ratio: 386 / 1483;
-  overflow: hidden;
-  opacity: 0.055;
-  transform: translateX(-50%) scaleY(-0.12);
-  transform-origin: center bottom;
-  filter: blur(9px) saturate(0.45);
-  clip-path: inset(92% -30% 0 -30%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent 76%);
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent 76%);
+  transform: translateX(-50%);
   pointer-events: none;
 }
 
-.hero-character-reflection img {
+.hero-floor-light,
+.foot-shadow {
+  position: absolute;
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-floor-light {
+  z-index: 0;
+  left: 42%;
+  bottom: -87px;
+  width: clamp(520px, 35vw, 680px);
+  height: clamp(96px, 11vh, 132px);
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(135, 112, 185, 0.24) 0%,
+    rgba(91, 70, 137, 0.16) 30%,
+    rgba(46, 35, 74, 0.08) 55%,
+    transparent 76%
+  );
+  filter: blur(10px);
+}
+
+.foot-shadow-shared {
+  z-index: 1;
+  left: 42%;
+  bottom: -14px;
+  width: 47%;
+  height: 20px;
+  transform: translateX(-50%);
+  background: rgba(13, 8, 20, 0.31);
+  filter: blur(15px);
+}
+
+.foot-shadow-weight {
+  z-index: 2;
+  height: 16px;
+  background: rgba(2, 1, 4, 0.44);
+  filter: blur(10px);
+}
+
+.foot-shadow-weight-left {
+  left: 22%;
+  bottom: -8px;
+  width: 31%;
+  transform: translateX(-50%);
+}
+
+.foot-shadow-weight-right {
+  left: 62%;
+  bottom: -10px;
+  width: 29%;
+  transform: translateX(-50%);
+}
+
+.foot-shadow-core {
+  z-index: 3;
+  height: 7px;
+  background: rgba(2, 1, 4, 0.78);
+  filter: blur(4px);
+}
+
+.foot-shadow-core-left {
+  left: 19%;
+  bottom: -1px;
+  width: 25%;
+  transform: translateX(-50%);
+}
+
+.foot-shadow-core-right {
+  left: 64%;
+  bottom: -4px;
+  width: 23%;
+  transform: translateX(-50%);
 }
 
 .hero-portfolio {
@@ -1213,6 +1231,10 @@ a {
     width: min(34vw, 390px);
   }
 
+  .hero-grounding {
+    left: 54%;
+  }
+
   .hero-portfolio {
     left: 8%;
     width: 70%;
@@ -1272,6 +1294,16 @@ a {
     bottom: 9%;
     width: min(68vw, 330px);
     height: 66%;
+  }
+
+  .hero-grounding {
+    left: 57%;
+    bottom: 9%;
+    height: 66%;
+  }
+
+  .hero-floor-light {
+    width: min(116vw, 520px);
   }
 
   .hero-portfolio {

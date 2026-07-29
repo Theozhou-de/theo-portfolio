@@ -79,7 +79,6 @@ export default function Home() {
           <div className="hero-back-glow" aria-hidden="true" />
           <div className="hero-lower-depth" aria-hidden="true" />
           <div className="hero-carpet" aria-hidden="true" />
-          <div className="hero-floor-light" aria-hidden="true" />
 
           <div className="refined-copy refined-type-back">
             <h1 className="refined-name" aria-label="THEO ZHOU PORTFOLIO">
@@ -88,9 +87,13 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="hero-contact-shadow" aria-hidden="true" />
-          <div className="hero-character-reflection" aria-hidden="true">
-            <img src="/theo-avatar-hero-crop.png" alt="" />
+          <div className="hero-grounding" aria-hidden="true">
+            <span className="hero-floor-light" />
+            <span className="foot-shadow foot-shadow-shared" />
+            <span className="foot-shadow foot-shadow-weight foot-shadow-weight-left" />
+            <span className="foot-shadow foot-shadow-weight foot-shadow-weight-right" />
+            <span className="foot-shadow foot-shadow-core foot-shadow-core-left" />
+            <span className="foot-shadow foot-shadow-core foot-shadow-core-right" />
           </div>
 
           <div className="refined-stage refined-avatar-stage">
