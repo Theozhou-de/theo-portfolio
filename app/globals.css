@@ -586,10 +586,8 @@ a {
   border: 1px solid rgba(132, 113, 160, 0.36);
   border-radius: 17px;
   background:
-    radial-gradient(ellipse 48% 16% at 56% 89%, rgba(103, 78, 154, 0.17) 0%, rgba(55, 40, 87, 0.08) 42%, transparent 76%),
-    radial-gradient(ellipse 52% 68% at 54% 48%, rgba(87, 70, 126, 0.15) 0%, rgba(43, 32, 68, 0.08) 43%, transparent 74%),
-    linear-gradient(to bottom, transparent 59%, rgba(10, 8, 15, 0.28) 79%, rgba(2, 2, 4, 0.94) 100%),
-    #030305;
+    radial-gradient(ellipse 36% 9% at 56% 91%, rgba(79, 58, 119, 0.11) 0%, transparent 76%),
+    linear-gradient(to bottom, #05050a 0%, #05040a 61%, #07050c 76%, #020204 100%);
 }
 
 .hero-editorial-root::before {
@@ -599,9 +597,8 @@ a {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 23% 42% at 56% 36%, rgba(158, 139, 202, 0.08), transparent 72%),
-    linear-gradient(90deg, rgba(3, 3, 5, 0.82), transparent 24%, transparent 76%, rgba(3, 3, 5, 0.86)),
-    radial-gradient(ellipse at center, transparent 34%, rgba(0, 0, 0, 0.44) 75%, rgba(0, 0, 0, 0.82) 100%);
+    linear-gradient(90deg, rgba(0, 0, 2, 0.9), transparent 28%, transparent 72%, rgba(0, 0, 2, 0.92)),
+    radial-gradient(ellipse at 56% 47%, transparent 20%, rgba(0, 0, 0, 0.12) 56%, rgba(0, 0, 0, 0.74) 100%);
 }
 
 .hero-editorial-root::after {
@@ -774,49 +771,48 @@ a {
 .hero-back-glow {
   position: absolute;
   z-index: 0;
-  left: 55.5%;
-  top: 51%;
-  width: min(72vw, 1360px);
-  height: 108vh;
+  left: 56%;
+  top: 50%;
+  width: min(52vw, 980px);
+  height: 94vh;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background:
     radial-gradient(
-      ellipse 34% 30% at 50% 24%,
-      rgba(233, 224, 250, 0.28) 0%,
-      rgba(185, 161, 226, 0.22) 38%,
-      transparent 80%
+      ellipse 31% 26% at 50% 27%,
+      rgba(222, 213, 241, 0.23) 0%,
+      rgba(164, 141, 205, 0.15) 42%,
+      transparent 82%
     ),
     radial-gradient(
-      ellipse 60% 72% at 50% 47%,
-      rgba(180, 151, 226, 0.48) 0%,
-      rgba(133, 102, 189, 0.34) 27%,
-      rgba(84, 59, 132, 0.2) 50%,
-      rgba(45, 31, 74, 0.09) 68%,
-      transparent 83%
+      ellipse 48% 74% at 50% 52%,
+      rgba(151, 124, 196, 0.27) 0%,
+      rgba(109, 84, 158, 0.19) 34%,
+      rgba(65, 46, 102, 0.1) 59%,
+      transparent 82%
     );
-  filter: blur(27px);
+  filter: blur(31px);
   pointer-events: none;
 }
 
 .hero-top-light {
   position: absolute;
   z-index: 0;
-  left: 55.5%;
-  top: 0;
-  width: min(48vw, 860px);
-  height: 66vh;
-  transform: translateX(-50%);
+  left: 56%;
+  top: -10%;
+  width: min(30vw, 560px);
+  height: 55vh;
+  transform: translateX(-50%) rotate(-1deg);
   background:
     radial-gradient(
-      ellipse 48% 62% at 50% 0%,
-      rgba(241, 235, 252, 0.3) 0%,
-      rgba(190, 169, 227, 0.21) 28%,
-      rgba(121, 91, 175, 0.1) 52%,
-      transparent 77%
+      ellipse 42% 74% at 50% 0%,
+      rgba(238, 233, 248, 0.19) 0%,
+      rgba(181, 164, 213, 0.12) 34%,
+      rgba(112, 87, 157, 0.055) 58%,
+      transparent 82%
     );
-  filter: blur(34px);
-  opacity: 0.96;
+  filter: blur(38px);
+  opacity: 0.82;
   pointer-events: none;
 }
 
@@ -839,26 +835,25 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 36%;
+  height: 29%;
   overflow: hidden;
   background:
     radial-gradient(
-      ellipse 58% 72% at 56% 30%,
-      rgba(177, 148, 220, 0.34) 0%,
-      rgba(121, 91, 174, 0.24) 28%,
-      rgba(68, 48, 106, 0.16) 54%,
-      rgba(31, 22, 51, 0.08) 73%,
-      transparent 86%
+      ellipse 43% 48% at 56% 27%,
+      rgba(151, 124, 191, 0.19) 0%,
+      rgba(98, 73, 142, 0.12) 34%,
+      rgba(50, 36, 78, 0.055) 62%,
+      transparent 84%
     ),
     linear-gradient(
       to bottom,
       transparent 0%,
-      rgba(37, 27, 55, 0.28) 18%,
-      rgba(22, 16, 34, 0.62) 62%,
-      rgba(6, 5, 9, 0.9) 100%
+      rgba(25, 18, 37, 0.16) 24%,
+      rgba(15, 11, 24, 0.48) 66%,
+      rgba(3, 3, 6, 0.94) 100%
     );
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.58) 13%, #000 34%);
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.58) 13%, #000 34%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 18%, #000 42%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 18%, #000 42%);
   pointer-events: none;
 }
 
@@ -871,13 +866,13 @@ a {
 }
 
 .hero-carpet::before {
-  opacity: 0.28;
+  opacity: 0.13;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 480 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='carpet'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.08 .46' numOctaves='4' seed='12' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23carpet)' opacity='.72'/%3E%3C/svg%3E");
-  background-size: 620px 360px;
+  background-size: 720px 420px;
   mix-blend-mode: screen;
-  filter: contrast(1.22) brightness(0.72) blur(0.25px);
-  -webkit-mask-image: radial-gradient(ellipse 74% 96% at 56% 35%, #000 0%, rgba(0, 0, 0, 0.8) 56%, transparent 100%);
-  mask-image: radial-gradient(ellipse 74% 96% at 56% 35%, #000 0%, rgba(0, 0, 0, 0.8) 56%, transparent 100%);
+  filter: contrast(1.05) brightness(0.66) blur(0.55px);
+  -webkit-mask-image: radial-gradient(ellipse 46% 72% at 56% 28%, #000 0%, rgba(0, 0, 0, 0.66) 52%, transparent 100%);
+  mask-image: radial-gradient(ellipse 46% 72% at 56% 28%, #000 0%, rgba(0, 0, 0, 0.66) 52%, transparent 100%);
 }
 
 .hero-carpet::after {
@@ -889,8 +884,8 @@ a {
       transparent 20px 37px
     ),
     radial-gradient(ellipse 50% 18% at 56% 39%, rgba(211, 190, 239, 0.11), transparent 74%);
-  opacity: 0.6;
-  filter: blur(0.7px);
+  opacity: 0.32;
+  filter: blur(0.9px);
 }
 
 .refined-stage {
@@ -922,37 +917,37 @@ a {
   object-position: center bottom;
   mix-blend-mode: normal;
   filter:
-    drop-shadow(0 -2px 3px rgba(238, 231, 255, 0.24))
-    drop-shadow(-2px 0 2px rgba(228, 218, 255, 0.19))
-    drop-shadow(3px 0 5px rgba(184, 153, 231, 0.2))
-    drop-shadow(0 0 13px rgba(133, 100, 196, 0.2))
-    drop-shadow(0 20px 32px rgba(0, 0, 0, 0.42));
+    drop-shadow(0 -1px 2px rgba(238, 233, 248, 0.16))
+    drop-shadow(-1px 0 2px rgba(220, 211, 240, 0.12))
+    drop-shadow(2px 0 4px rgba(171, 145, 211, 0.14))
+    drop-shadow(0 0 9px rgba(117, 88, 166, 0.13))
+    drop-shadow(0 18px 26px rgba(0, 0, 0, 0.5));
 }
 
 .hero-floor-light {
   position: absolute;
   z-index: 2;
   left: 56%;
-  bottom: 0.8%;
-  width: min(72vw, 1320px);
-  height: min(19vh, 190px);
+  bottom: 3.2%;
+  width: min(54vw, 980px);
+  height: min(12vh, 124px);
   transform: translateX(-50%);
   border-radius: 50%;
   background:
     radial-gradient(
       ellipse 60% 40% at 50% 38%,
-      rgba(224, 204, 247, 0.52) 0%,
-      rgba(177, 143, 226, 0.4) 24%,
-      rgba(116, 85, 171, 0.25) 49%,
-      rgba(60, 42, 98, 0.12) 69%,
+      rgba(211, 195, 233, 0.34) 0%,
+      rgba(156, 129, 195, 0.25) 25%,
+      rgba(96, 70, 139, 0.15) 51%,
+      rgba(47, 33, 73, 0.06) 70%,
       transparent 86%
     ),
     radial-gradient(
       ellipse 82% 68% at 50% 43%,
-      rgba(124, 92, 178, 0.2),
+      rgba(103, 78, 145, 0.1),
       transparent 80%
     );
-  filter: blur(22px);
+  filter: blur(18px);
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -961,19 +956,19 @@ a {
   position: absolute;
   z-index: 2;
   left: 56%;
-  bottom: 7.1%;
-  width: 218px;
-  height: 24px;
+  bottom: 7.45%;
+  width: 184px;
+  height: 18px;
   transform: translateX(-50%);
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(0, 0, 0, 0.98) 0%,
-    rgba(9, 5, 15, 0.92) 36%,
-    rgba(35, 22, 53, 0.54) 67%,
+    rgba(0, 0, 0, 0.99) 0%,
+    rgba(5, 3, 8, 0.94) 43%,
+    rgba(30, 20, 43, 0.42) 72%,
     transparent 100%
   );
-  filter: blur(5px);
+  filter: blur(4px);
   pointer-events: none;
 }
 
@@ -981,18 +976,18 @@ a {
   position: absolute;
   z-index: 2;
   left: 56%;
-  bottom: 6.95%;
+  bottom: 7.15%;
   height: 80%;
   width: auto;
   aspect-ratio: 386 / 1483;
   overflow: hidden;
-  opacity: 0.095;
-  transform: translateX(-50%) scaleY(-0.15);
+  opacity: 0.055;
+  transform: translateX(-50%) scaleY(-0.12);
   transform-origin: center bottom;
-  filter: blur(8px) saturate(0.58);
-  clip-path: inset(90% -35% 0 -35%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 82%);
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 82%);
+  filter: blur(9px) saturate(0.45);
+  clip-path: inset(92% -30% 0 -30%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent 76%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent 76%);
   pointer-events: none;
 }
 
