@@ -1,5 +1,4 @@
 import { CursorGlow, ImageReveal, Reveal, TextReveal, TiltCard } from "./Animation";
-import LaserFlow from "./LaserFlow";
 
 const projects = [
   {
@@ -80,23 +79,6 @@ export default function Home() {
           <div className="hero-back-glow" aria-hidden="true" />
           <div className="hero-lower-depth" aria-hidden="true" />
           <div className="hero-carpet" aria-hidden="true" />
-          <LaserFlow
-            className="hero-laser-flow"
-            alignToHeroFloor
-            color="#ca94ff"
-            horizontalSizing={0.9}
-            verticalSizing={2.1}
-            wispDensity={0.6}
-            wispSpeed={2.5}
-            wispIntensity={1.4}
-            flowSpeed={0.16}
-            flowStrength={0.39}
-            fogIntensity={0.43}
-            fogScale={0.14}
-            fogFallSpeed={0.06}
-            decay={1.1}
-            falloffStart={0.87}
-          />
 
           <div className="refined-copy refined-type-back">
             <h1 className="refined-name" aria-label="THEO ZHOU PORTFOLIO">
