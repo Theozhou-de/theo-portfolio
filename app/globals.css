@@ -610,6 +610,54 @@ a {
   box-shadow: inset 0 0 160px 38px rgba(0, 0, 0, 0.58);
 }
 
+.hero-liquid-layer {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #000;
+}
+
+.hero-liquid-base,
+.hero-liquid-ether {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-liquid-base {
+  background:
+    radial-gradient(
+      ellipse 48% 72% at 56% 49%,
+      rgba(206, 172, 245, 0.13) 0%,
+      rgba(82, 39, 255, 0.055) 41%,
+      transparent 76%
+    ),
+    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.18) 48%, #000 100%);
+}
+
+.hero-liquid-ether {
+  opacity: 0.68;
+  filter: saturate(0.82) contrast(1.04);
+  -webkit-mask-image: radial-gradient(
+    ellipse 84% 88% at 56% 49%,
+    #000 0%,
+    rgba(0, 0, 0, 0.94) 52%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 84% 88% at 56% 49%,
+    #000 0%,
+    rgba(0, 0, 0, 0.94) 52%,
+    transparent 100%
+  );
+}
+
+.hero-liquid-ether canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .editorial-grain {
   position: absolute;
   z-index: 0;
@@ -1287,6 +1335,22 @@ a {
     margin: 0;
     border-width: 0;
     border-radius: 0;
+  }
+
+  .hero-liquid-ether {
+    opacity: 0.52;
+    -webkit-mask-image: radial-gradient(
+      ellipse 110% 84% at 57% 49%,
+      #000 0%,
+      rgba(0, 0, 0, 0.9) 48%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 110% 84% at 57% 49%,
+      #000 0%,
+      rgba(0, 0, 0, 0.9) 48%,
+      transparent 100%
+    );
   }
 
   .editorial-nav {

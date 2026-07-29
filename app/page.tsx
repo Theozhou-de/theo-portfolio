@@ -1,4 +1,5 @@
 import { CursorGlow, ImageReveal, Reveal, TextReveal, TiltCard } from "./Animation";
+import HeroLiquidEther from "./HeroLiquidEther";
 
 const projects = [
   {
@@ -56,6 +57,8 @@ export default function Home() {
     <main>
       <CursorGlow />
       <section className="hero hero-editorial-root" id="home">
+        <HeroLiquidEther />
+
         <nav className="editorial-nav" aria-label="主导航">
           <a className="editorial-logo" href="#home" aria-label="返回首页">
             THEO ZHOU
