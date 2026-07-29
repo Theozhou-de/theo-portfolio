@@ -1,4 +1,5 @@
-import { CursorGlow, ImageReveal, Reveal, TextReveal, TiltCard } from "./Animation";
+import { CursorGlow, Reveal, TextReveal, TiltCard } from "./Animation";
+import AboutCamcorder from "./AboutCamcorder";
 import HeroLiquidEther from "./HeroLiquidEther";
 
 const projects = [
@@ -131,15 +132,11 @@ export default function Home() {
           <p>ABOUT / EXPERIENCE</p>
         </TextReveal>
         <div className="about-grid">
-          <ImageReveal className="portrait">
-            <div className="portrait-glow" />
-            <div className="portrait-copy">
-              <span>QIXIANG ZHOU</span>
-              <strong>QX</strong>
-              <p>AIGC · CONTENT · PM</p>
-            </div>
-          </ImageReveal>
+          <Reveal className="about-visual" delay={0.05}>
+            <AboutCamcorder />
+          </Reveal>
           <Reveal className="about-copy" delay={0.1}>
+            <p className="about-eyebrow">HELLO, I&apos;M THEO.</p>
             <p className="lead">
               我是一名从电商增长一线走向
               <em> AIGC 内容与项目管理</em>的复合型创作者。

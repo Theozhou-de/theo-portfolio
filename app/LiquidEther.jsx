@@ -1010,15 +1010,23 @@ export default function LiquidEther({
     container.style.position = container.style.position || 'relative';
     container.style.overflow = container.style.overflow || 'hidden';
 
-    const webgl = new WebGLManager({
-      $wrapper: container,
-      autoDemo,
-      autoSpeed,
-      autoIntensity,
-      takeoverDuration,
-      autoResumeDelay,
-      autoRampDuration
-    });
+    let webgl;
+    try {
+      webgl = new WebGLManager({
+        $wrapper: container,
+        autoDemo,
+        autoSpeed,
+        autoIntensity,
+        takeoverDuration,
+        autoResumeDelay,
+        autoRampDuration
+      });
+    } catch (error) {
+      container.dataset.liquidEtherUnavailable = "true";
+      return () => {
+        delete container.dataset.liquidEtherUnavailable;
+      };
+    }
     webglRef.current = webgl;
 
     const applyOptionsFromProps = () => {
