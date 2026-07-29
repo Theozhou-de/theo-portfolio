@@ -1260,13 +1260,7 @@ export default function LiquidEther({
     <div
       ref={mountRef}
       className={`liquid-ether-container ${className || ''}`}
-      style={{
-        ...style,
-        background:
-          color0 && color1 && color2
-            ? `linear-gradient(90deg, ${color0}, ${color1}, ${color2})`
-            : style.background
-      }}
+      style={style}
     />
   );
 }

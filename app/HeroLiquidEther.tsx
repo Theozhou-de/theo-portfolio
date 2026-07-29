@@ -24,7 +24,7 @@ export default function HeroLiquidEther() {
 
   return (
     <div className="hero-liquid-layer" aria-hidden="true">
-      <div style={{ width: "100%", height: 600, position: "relative" }}>
+      <div className="hero-liquid-canvas">
         {LiquidEther ? (
           <LiquidEther
             colors={["#5227FF", "#FF9FFC", "#B497CF"]}
