@@ -62,6 +62,62 @@ const careerPath = [
   },
 ];
 
+function StrengthVisual({ type }: { type: string }) {
+  if (type === "strategy") {
+    return (
+      <div className="strength-visual strength-visual-strategy" aria-hidden="true">
+        <div className="strategy-orbit strategy-orbit-a" />
+        <div className="strategy-orbit strategy-orbit-b" />
+        <div className="strategy-orbit strategy-orbit-c" />
+        <span className="strategy-node strategy-node-insight">洞察</span>
+        <span className="strategy-node strategy-node-position">定位</span>
+        <span className="strategy-node strategy-node-plan">策略</span>
+        <span className="strategy-node strategy-node-output">内容方案</span>
+        <span className="strategy-core">需求</span>
+      </div>
+    );
+  }
+
+  if (type === "workflow") {
+    return (
+      <div className="strength-visual strength-visual-workflow" aria-hidden="true">
+        <div className="workflow-track" />
+        {["需求输入", "图像生成", "视频生成", "文本协同", "成果输出"].map((step, index) => (
+          <div className="workflow-stage" key={step}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <b>{step}</b>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (type === "management") {
+    return (
+      <div className="strength-visual strength-visual-management" aria-hidden="true">
+        <div className="management-phases">
+          <span>目标拆解</span><span>资源协同</span><span>执行推进</span><span>交付复盘</span>
+        </div>
+        <div className="management-row"><b>目标</b><i /></div>
+        <div className="management-row"><b>资源</b><i /></div>
+        <div className="management-row"><b>制作</b><i /></div>
+        <div className="management-row"><b>审核</b><i /></div>
+        <div className="management-row"><b>交付</b><i /></div>
+        <div className="management-milestone">稳定落地</div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="strength-visual strength-visual-impact" aria-hidden="true">
+      <div className="impact-path"><i /><i /><i /></div>
+      <div className="impact-bars"><span /><span /><span /><span /><span /></div>
+      <div className="impact-axis"><span>内容效率</span><span>交付质量</span><span>业务价值</span></div>
+      <strong>VALUE</strong>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main>
@@ -226,9 +282,7 @@ export default function Home() {
                   {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
               </div>
-              <div className={`strength-visual strength-visual-${item.visual}`} aria-hidden="true">
-                <span /><span /><span /><span /><span />
-              </div>
+              <StrengthVisual type={item.visual} />
             </Reveal>
           ))}
         </div>
