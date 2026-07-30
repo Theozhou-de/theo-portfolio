@@ -53,6 +53,30 @@ const strengths = [
   },
 ];
 
+const careerPath = [
+  {
+    period: "2021 — 2022",
+    title: "电商运营与增长实践",
+    role: "电商运营",
+    description:
+      "从商品、活动与用户数据出发，建立以业务目标为导向的运营方法。",
+  },
+  {
+    period: "2023 — 2024",
+    title: "内容策略与项目协同",
+    role: "内容运营 / 项目推进",
+    description:
+      "连接内容生产、流量策略与跨团队协作，推动项目从需求拆解走向稳定交付。",
+  },
+  {
+    period: "2025 — 至今",
+    title: "AIGC 内容与项目管理",
+    role: "AIGC CONTENT / PROJECT PM",
+    description:
+      "将生成式图像、视频与文本工具纳入内容工作流，兼顾创意质量、效率与商业结果。",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -161,15 +185,26 @@ export default function Home() {
                 <span>AI 工具深度应用</span>
               </div>
             </div>
-            <div className="experience-row">
-              <span>2021 — NOW</span>
-              <p>
-                <b>电商运营 / AIGC 内容实践</b>
-                <small>内容策略 · 项目推进 · AI 工作流 · 数据分析</small>
-              </p>
-            </div>
           </Reveal>
         </div>
+
+        <Reveal className="career-path" delay={0.12}>
+          <div className="career-path-heading">
+            <p>CAREER PATH</p>
+            <h3>工作经历</h3>
+          </div>
+          <div className="career-timeline">
+            {careerPath.map((item) => (
+              <article className="career-item" key={item.period}>
+                <span className="career-node" aria-hidden="true" />
+                <p className="career-period">{item.period}</p>
+                <h4>{item.title}</h4>
+                <span className="career-role">{item.role}</span>
+                <p className="career-description">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       <section className="projects section" id="projects">
