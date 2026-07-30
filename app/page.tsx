@@ -1,30 +1,7 @@
-import { CursorGlow, Reveal, TextReveal, TiltCard } from "./Animation";
+import { CursorGlow, Reveal, TextReveal } from "./Animation";
 import AboutCamcorder from "./AboutCamcorder";
 import HeroLiquidEther from "./HeroLiquidEther";
-
-const projects = [
-  {
-    index: "01",
-    type: "AIGC CAMPAIGN",
-    title: "品牌视觉与内容生产",
-    subtitle: "从创意概念、工作流设计到批量内容交付",
-    className: "project-violet",
-  },
-  {
-    index: "02",
-    type: "AI VIDEO",
-    title: "AI 商业影像实验",
-    subtitle: "用生成式影像重构广告内容的制作效率",
-    className: "project-blue",
-  },
-  {
-    index: "03",
-    type: "PROJECT MANAGEMENT",
-    title: "AIGC 项目全链路管理",
-    subtitle: "拆解复杂目标，连接创意、技术与业务结果",
-    className: "project-amber",
-  },
-];
+import ProjectExperience from "./ProjectExperience";
 
 const strengths = [
   {
@@ -214,28 +191,10 @@ export default function Home() {
               <span>02</span>
               <p>SELECTED WORKS</p>
             </div>
-            <h2>精选项目</h2>
-            <p>把创意、工具与商业目标组织成完整作品。</p>
+            <h2>PROJECT EXPERIENCE</h2>
+            <p>从业务问题出发，建立可复制、可扩展的 AIGC 内容生产能力。</p>
           </TextReveal>
-          <div className="project-list">
-            {projects.map((project, index) => (
-              <TiltCard className={`project-card ${project.className}`} delay={index * 0.15} key={project.index}>
-                <div className="project-no">{project.index}</div>
-                <div className="project-art" aria-hidden="true">
-                  <span className="art-ring" />
-                  <span className="art-core" />
-                  <span className="art-line line-a" />
-                  <span className="art-line line-b" />
-                </div>
-                <div className="project-meta">
-                  <p>{project.type}</p>
-                  <h3>{project.title}</h3>
-                  <span>{project.subtitle}</span>
-                </div>
-                <div className="project-arrow">↗</div>
-              </TiltCard>
-            ))}
-          </div>
+          <ProjectExperience />
         </div>
       </section>
 
