@@ -9,24 +9,32 @@ const strengths = [
     title: "内容策略",
     en: "CONTENT STRATEGY",
     text: "理解品牌与用户，把模糊需求转化为清晰、可执行的内容方案。",
+    visual: "strategy",
+    tags: ["洞察", "定位", "内容方案"],
   },
   {
     number: "02",
     title: "AIGC 工作流",
     en: "AIGC WORKFLOW",
     text: "熟悉图像、视频与文本生成链路，持续优化质量、效率与一致性。",
+    visual: "workflow",
+    tags: ["图像", "视频", "文本"],
   },
   {
     number: "03",
     title: "项目管理",
     en: "PROJECT MANAGEMENT",
     text: "从目标拆解、资源协同到交付复盘，推动跨团队项目稳定落地。",
+    visual: "management",
+    tags: ["目标拆解", "资源协同", "交付复盘"],
   },
   {
     number: "04",
     title: "业务转化",
     en: "BUSINESS IMPACT",
     text: "五年电商实战背景，以真实业务指标检验创意与内容价值。",
+    visual: "impact",
+    tags: ["5年实战", "业务指标", "价值验证"],
   },
 ];
 
@@ -208,12 +216,19 @@ export default function Home() {
         </TextReveal>
         <div className="strength-grid">
           {strengths.map((item, index) => (
-            <Reveal className="strength-card" delay={index * 0.1} key={item.number}>
-              <span className="strength-number">{item.number}</span>
-              <p className="strength-en">{item.en}</p>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <div className="card-mark">✦</div>
+            <Reveal className={`strength-card strength-${item.visual}`} delay={index * 0.1} key={item.number}>
+              <div className="strength-card-copy">
+                <span className="strength-number">{item.number}</span>
+                <p className="strength-en">{item.en}</p>
+                <h3>{item.title}</h3>
+                <p className="strength-description">{item.text}</p>
+                <div className="strength-tags" aria-label={`${item.title}关键词`}>
+                  {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+              </div>
+              <div className={`strength-visual strength-visual-${item.visual}`} aria-hidden="true">
+                <span /><span /><span /><span /><span />
+              </div>
             </Reveal>
           ))}
         </div>
