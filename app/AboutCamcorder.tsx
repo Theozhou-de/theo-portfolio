@@ -1,79 +1,106 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function formatTime(totalSeconds: number) {
-  const minutes = Math.floor(totalSeconds / 60)
-    .toString()
-    .padStart(2, "0");
-  const seconds = (totalSeconds % 60).toString().padStart(2, "0");
+  const safeSeconds = Math.max(0, Math.floor(totalSeconds));
+  const minutes = Math.floor(safeSeconds / 60).toString().padStart(2, "0");
+  const seconds = (safeSeconds % 60).toString().padStart(2, "0");
   return `00:${minutes}:${seconds}`;
 }
 
 export default function AboutCamcorder() {
+  const frameRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [elapsed, setElapsed] = useState(0);
 
   useEffect(() => {
-    if (!isPlaying) return;
+    const frame = frameRef.current;
+    const video = videoRef.current;
+    if (!frame || !video) return;
 
-    const timer = window.setInterval(() => {
-      setElapsed((current) => current + 1);
-    }, 1000);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.42 && !reducedMotion.matches) {
+          void video.play().catch(() => setIsPlaying(false));
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: [0, 0.42, 0.7] },
+    );
 
-    return () => window.clearInterval(timer);
-  }, [isPlaying]);
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, []);
+
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play().catch(() => setIsPlaying(false));
+    } else {
+      video.pause();
+    }
+  };
 
   return (
-    <div className="camcorder" data-playing={isPlaying}>
-      <img
-        className="camcorder-image"
-        src="/theo-about-camera.png"
-        alt="Theo 的灰色西装 Q 版个人形象"
-      />
-      <div className="camcorder-shade" aria-hidden="true" />
-      <div className="camcorder-scanlines" aria-hidden="true" />
+    <div className="camcorder-stage">
+      <div className="camcorder-index" aria-hidden="true"><span>PORTRAIT</span><b>01</b></div>
+      <div className="camcorder-orbit camcorder-orbit-one" aria-hidden="true" />
+      <div className="camcorder-orbit camcorder-orbit-two" aria-hidden="true" />
 
-      <div className="camcorder-topbar" aria-hidden="true">
-        <span className="camcorder-rec">
-          <i />
-          {isPlaying ? "REC" : "STBY"}
-        </span>
-        <span className="camcorder-time">{formatTime(elapsed)}</span>
-        <span className="camcorder-battery">
-          <i />
-        </span>
+      <div className="camcorder" data-playing={isPlaying} ref={frameRef}>
+        <video
+          className="camcorder-video"
+          ref={videoRef}
+          src="/theo-intro-film.mp4"
+          poster="/theo-intro-poster.jpg"
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          onTimeUpdate={(event) => setElapsed(event.currentTarget.currentTime)}
+          aria-label="Theo 个人介绍视频"
+        />
+        <div className="camcorder-shade" aria-hidden="true" />
+        <div className="camcorder-scanlines" aria-hidden="true" />
+
+        <div className="camcorder-topbar" aria-hidden="true">
+          <span className="camcorder-rec"><i />{isPlaying ? "REC" : "STBY"}</span>
+          <span className="camcorder-time">{formatTime(elapsed)}</span>
+          <span className="camcorder-battery"><i /></span>
+        </div>
+
+        <div className="camcorder-focus" aria-hidden="true">
+          <i className="focus-corner focus-tl" /><i className="focus-corner focus-tr" />
+          <i className="focus-corner focus-bl" /><i className="focus-corner focus-br" />
+        </div>
+
+        <button
+          className="camcorder-control"
+          type="button"
+          aria-label={isPlaying ? "暂停自我介绍视频" : "播放自我介绍视频"}
+          aria-pressed={isPlaying}
+          onClick={togglePlayback}
+        >
+          <span className="control-ring">
+            {isPlaying ? <span className="pause-icon" aria-hidden="true"><i /><i /></span> : <span className="play-icon" aria-hidden="true" />}
+          </span>
+        </button>
+
+        <div className="camcorder-footer" aria-hidden="true">
+          <span>THEO / INTRO FILM</span><span>4K&nbsp;&nbsp;24FPS</span>
+        </div>
       </div>
 
-      <div className="camcorder-focus" aria-hidden="true">
-        <i className="focus-corner focus-tl" />
-        <i className="focus-corner focus-tr" />
-        <i className="focus-corner focus-bl" />
-        <i className="focus-corner focus-br" />
-      </div>
-
-      <button
-        className="camcorder-control"
-        type="button"
-        aria-label={isPlaying ? "暂停自我介绍" : "播放自我介绍"}
-        aria-pressed={isPlaying}
-        onClick={() => setIsPlaying((current) => !current)}
-      >
-        <span className="control-ring">
-          {isPlaying ? (
-            <span className="pause-icon" aria-hidden="true">
-              <i />
-              <i />
-            </span>
-          ) : (
-            <span className="play-icon" aria-hidden="true" />
-          )}
-        </span>
-      </button>
-
-      <div className="camcorder-footer" aria-hidden="true">
-        <span>THEO / INTRO FILM</span>
-        <span>4K&nbsp;&nbsp;24FPS</span>
+      <div className="camcorder-status" aria-hidden="true"><i /><span>AUTO PLAY<br />ON VIEW</span></div>
+      <div className="camcorder-ruler" aria-hidden="true">
+        {Array.from({ length: 7 }, (_, index) => <i key={index} />)}
       </div>
     </div>
   );
