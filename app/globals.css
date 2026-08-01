@@ -382,6 +382,57 @@ a {
   outline-offset: 4px;
 }
 
+.camcorder-volume {
+  position: absolute;
+  z-index: 8;
+  right: 22px;
+  bottom: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid rgba(237, 228, 255, 0.34);
+  border-radius: 999px;
+  background: rgba(8, 6, 13, 0.5);
+  color: rgba(249, 246, 255, 0.82);
+  font: inherit;
+  font-size: 7px;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.camcorder-volume svg {
+  width: 15px;
+  height: 15px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.camcorder-volume svg path:first-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.camcorder-volume:hover,
+.camcorder-volume:focus-visible {
+  border-color: rgba(205, 178, 255, 0.82);
+  background: rgba(117, 70, 194, 0.5);
+  transform: translateY(-2px);
+}
+
+.camcorder-volume:focus-visible {
+  outline: 2px solid #d7c3ff;
+  outline-offset: 3px;
+}
+
 .play-icon {
   width: 0;
   height: 0;
@@ -1686,6 +1737,7 @@ a {
   .camcorder-topbar,
   .camcorder-footer { left: 20px; right: 20px; }
   .camcorder-control { width: 82px; height: 82px; }
+  .camcorder-volume { right: 17px; bottom: 46px; }
   .control-ring { width: 64px; height: 64px; }
   .lead { font-size: 36px; }
   .body-copy { margin-top: 34px; }

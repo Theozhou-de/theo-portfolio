@@ -13,6 +13,7 @@ export default function AboutCamcorder() {
   const frameRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const [elapsed, setElapsed] = useState(0);
 
   useEffect(() => {
@@ -46,6 +47,13 @@ export default function AboutCamcorder() {
     }
   };
 
+  const toggleSound = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
+  };
+
   return (
     <div className="camcorder-stage">
       <div className="camcorder-index" aria-hidden="true"><span>PORTRAIT</span><b>01</b></div>
@@ -58,7 +66,7 @@ export default function AboutCamcorder() {
           ref={videoRef}
           src="/theo-intro-film.mp4"
           poster="/theo-intro-poster.jpg"
-          muted
+          muted={isMuted}
           loop
           playsInline
           preload="metadata"
@@ -91,6 +99,24 @@ export default function AboutCamcorder() {
           <span className="control-ring">
             {isPlaying ? <span className="pause-icon" aria-hidden="true"><i /><i /></span> : <span className="play-icon" aria-hidden="true" />}
           </span>
+        </button>
+
+        <button
+          className="camcorder-volume"
+          type="button"
+          aria-label={isMuted ? "开启视频声音" : "关闭视频声音"}
+          aria-pressed={!isMuted}
+          onClick={toggleSound}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9.2v5.6h3.6l4.7 3.7v-13l-4.7 3.7H4Z" />
+            {isMuted ? (
+              <path d="m16.2 9.2 4.1 4.1m0-4.1-4.1 4.1" />
+            ) : (
+              <path d="M16.1 8.1a5.4 5.4 0 0 1 0 7.8m2.4-10.2a8.8 8.8 0 0 1 0 12.6" />
+            )}
+          </svg>
+          <span>{isMuted ? "SOUND OFF" : "SOUND ON"}</span>
         </button>
 
         <div className="camcorder-footer" aria-hidden="true">
