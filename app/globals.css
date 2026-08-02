@@ -1753,6 +1753,12 @@ a {
   filter: brightness(.58) saturate(.76);
 }
 
+.portfolio-card.is-hidden:not(.is-center) {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(.3);
+}
+
 .portfolio-card-number,
 .portfolio-duration {
   position: absolute;

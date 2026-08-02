@@ -15,10 +15,16 @@ type PortfolioWheelProps = {
 };
 
 const videoWorks: WorkItem[] = [
-  { title: "NEW YORK YANKEES 01", category: "AIGC / FASHION CAMPAIGN", duration: "00:21", image: "/works/video/yankees-01-poster.jpg", video: "/works/video/yankees-01.mp4" },
-  { title: "NEW YORK YANKEES 02", category: "AIGC / PRODUCT CAMPAIGN", duration: "00:16", image: "/works/video/yankees-02-poster.jpg", video: "/works/video/yankees-02.mp4" },
-  { title: "NEW YORK YANKEES 03", category: "AIGC / LOOKBOOK FILM", duration: "00:15", image: "/works/video/yankees-03-poster.jpg", video: "/works/video/yankees-03.mp4" },
-  { title: "NEW YORK YANKEES 04", category: "AIGC / BRAND FILM", duration: "00:15", image: "/works/video/yankees-04-poster.jpg", video: "/works/video/yankees-04.mp4" },
+  { title: "NEW ERA 1", category: "AIGC / FASHION CAMPAIGN", duration: "00:21", image: "/works/video/yankees-01-poster.jpg", video: "/works/video/yankees-01.mp4" },
+  { title: "NEW ERA 2", category: "AIGC / PRODUCT CAMPAIGN", duration: "00:16", image: "/works/video/yankees-02-poster.jpg", video: "/works/video/yankees-02.mp4" },
+  { title: "NEW ERA 3", category: "AIGC / LOOKBOOK FILM", duration: "00:15", image: "/works/video/yankees-03-poster.jpg", video: "/works/video/yankees-03.mp4" },
+  { title: "NEW ERA 4", category: "AIGC / BRAND FILM", duration: "00:15", image: "/works/video/yankees-04-poster.jpg", video: "/works/video/yankees-04.mp4" },
+  { title: "绒呼吸", category: "AIGC / PRODUCT FILM", duration: "00:38", image: "/works/video/fur-breath-poster.jpg", video: "/works/video/fur-breath.mp4" },
+  { title: "CK", category: "AIGC / FASHION CAMPAIGN", duration: "00:12", image: "/works/video/ck-poster.jpg", video: "/works/video/ck.mp4" },
+  { title: "JACKWOLF", category: "AIGC / OUTDOOR CAMPAIGN", duration: "00:24", image: "/works/video/jackwolf-poster.jpg", video: "/works/video/jackwolf.mp4" },
+  { title: "K2", category: "AIGC / BEAUTY FILM", duration: "00:10", image: "/works/video/k2-poster.jpg", video: "/works/video/k2.mp4" },
+  { title: "K6", category: "AIGC / BEAUTY FILM", duration: "00:11", image: "/works/video/k6-poster.jpg", video: "/works/video/k6.mp4" },
+  { title: "KERASTASE", category: "AIGC / BEAUTY CAMPAIGN", duration: "00:13", image: "/works/video/kerastase-poster.jpg", video: "/works/video/kerastase.mp4" },
 ];
 
 const imageWorks: WorkItem[] = [
@@ -41,6 +47,7 @@ function circularOffset(index: number, active: number, length: number) {
 
 function offsetClass(offset: number) {
   if (offset === 0) return "is-center";
+  if (Math.abs(offset) > 3) return "is-hidden";
   return `is-${offset < 0 ? "left" : "right"}-${Math.abs(offset)}`;
 }
 
