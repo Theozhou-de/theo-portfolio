@@ -28,13 +28,28 @@ const videoWorks: WorkItem[] = [
 ];
 
 const imageWorks: WorkItem[] = [
-  { title: "OBSIDIAN CAMPAIGN", category: "PRODUCT / KEY VISUAL", image: "/theo-hero-obsidian.png" },
-  { title: "THEO PORTRAIT", category: "MODEL / EDITORIAL", image: "/theo-avatar-hero-crop.png" },
-  { title: "VIOLET STUDIO", category: "CREATIVE / ART DIRECTION", image: "/theo-hero-scene.png" },
-  { title: "INTRO CHARACTER", category: "AIGC / CHARACTER", image: "/theo-intro-poster.jpg" },
-  { title: "CAMERA PORTRAIT", category: "MODEL / CAMPAIGN", image: "/theo-about-camera.png" },
-  { title: "DIGITAL THEO", category: "AIGC / PORTRAIT", image: "/theo-avatar-v2.png" },
-  { title: "PURPLE DIMENSION", category: "CONCEPT / KEY VISUAL", image: "/theo-hero-visual.png" },
+  { title: "WEIGHTLESS SHELL", category: "COLUMBIA / PRODUCT CONCEPT", image: "/works/image/portfolio-01.webp" },
+  { title: "ALPINE PORTRAIT", category: "OUTDOOR / FASHION CAMPAIGN", image: "/works/image/portfolio-02.webp" },
+  { title: "CHOCOLATE BOTANICA I", category: "FOOD / PRODUCT VISUAL", image: "/works/image/portfolio-03.webp" },
+  { title: "CHOCOLATE BOTANICA II", category: "FOOD / PRODUCT VISUAL", image: "/works/image/portfolio-04.webp" },
+  { title: "SUMMER EDITORIAL", category: "MODEL / LIFESTYLE", image: "/works/image/portfolio-05.webp" },
+  { title: "EMBROIDERY ERA I", category: "NEW ERA / PRODUCT CAMPAIGN", image: "/works/image/portfolio-06.webp" },
+  { title: "STORMSHELL BLACK", category: "COLUMBIA / PRODUCT VISUAL", image: "/works/image/portfolio-07.webp" },
+  { title: "STORMSHELL SAND", category: "COLUMBIA / PRODUCT VISUAL", image: "/works/image/portfolio-08.webp" },
+  { title: "STORMSHELL BLUE", category: "COLUMBIA / PRODUCT VISUAL", image: "/works/image/portfolio-09.webp" },
+  { title: "CITY FRAME", category: "NEW ERA / FASHION CAMPAIGN", image: "/works/image/portfolio-10.webp" },
+  { title: "EMBROIDERY ERA II", category: "NEW ERA / PRODUCT CAMPAIGN", image: "/works/image/portfolio-11.webp" },
+  { title: "URBAN DENIM", category: "MODEL / STREET EDITORIAL", image: "/works/image/portfolio-12.webp" },
+  { title: "CK ESSENTIALS I", category: "CALVIN KLEIN / LIFESTYLE", image: "/works/image/portfolio-13.webp" },
+  { title: "TECHLITE SPLASH", category: "COLUMBIA / PRODUCT CAMPAIGN", image: "/works/image/portfolio-14.webp" },
+  { title: "MEADOW HIKE", category: "COLUMBIA / PRODUCT CAMPAIGN", image: "/works/image/portfolio-15.webp" },
+  { title: "CK ESSENTIALS II", category: "CALVIN KLEIN / LIFESTYLE", image: "/works/image/portfolio-16.webp" },
+  { title: "COURT LIGHT", category: "NEW ERA / FASHION CAMPAIGN", image: "/works/image/portfolio-17.webp" },
+  { title: "TRAIL BLACK I", category: "COLUMBIA / PRODUCT CAMPAIGN", image: "/works/image/portfolio-18.webp" },
+  { title: "TRAIL BLACK II", category: "COLUMBIA / PRODUCT CAMPAIGN", image: "/works/image/portfolio-19.webp" },
+  { title: "TRAIL MOTION", category: "COLUMBIA / OUTDOOR CAMPAIGN", image: "/works/image/portfolio-20.webp" },
+  { title: "HOLIDAY KNIT", category: "MODEL / FASHION EDITORIAL", image: "/works/image/portfolio-21.webp" },
+  { title: "TRAIL PANTS", category: "COLUMBIA / OUTDOOR CAMPAIGN", image: "/works/image/portfolio-22.webp" },
 ];
 
 function circularOffset(index: number, active: number, length: number) {
