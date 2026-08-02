@@ -7,6 +7,7 @@ type WorkItem = {
   category: string;
   duration?: string;
   image: string;
+  video?: string;
 };
 
 type PortfolioWheelProps = {
@@ -14,13 +15,10 @@ type PortfolioWheelProps = {
 };
 
 const videoWorks: WorkItem[] = [
-  { title: "THEO INTRO FILM", category: "PERSONAL / BRAND FILM", duration: "00:27", image: "/theo-intro-poster.jpg" },
-  { title: "OBSIDIAN", category: "PRODUCT / CAMPAIGN FILM", duration: "00:18", image: "/theo-hero-obsidian.png" },
-  { title: "DIGITAL PERSON", category: "MODEL / CHARACTER FILM", duration: "00:24", image: "/theo-about-camera.png" },
-  { title: "AIGC PORTRAIT", category: "FASHION / MOTION", duration: "00:15", image: "/theo-avatar-hero-crop.png" },
-  { title: "VIOLET WORLD", category: "CREATIVE / VISUAL FILM", duration: "00:20", image: "/theo-hero-scene.png" },
-  { title: "THEO PROFILE", category: "MODEL / PROFILE FILM", duration: "00:22", image: "/theo-avatar-v2.png" },
-  { title: "FUTURE CAMPAIGN", category: "AIGC / CONCEPT FILM", duration: "00:19", image: "/theo-hero-visual.png" },
+  { title: "NEW YORK YANKEES 01", category: "AIGC / FASHION CAMPAIGN", duration: "00:21", image: "/works/video/yankees-01-poster.jpg", video: "/works/video/yankees-01.mp4" },
+  { title: "NEW YORK YANKEES 02", category: "AIGC / PRODUCT CAMPAIGN", duration: "00:16", image: "/works/video/yankees-02-poster.jpg", video: "/works/video/yankees-02.mp4" },
+  { title: "NEW YORK YANKEES 03", category: "AIGC / LOOKBOOK FILM", duration: "00:15", image: "/works/video/yankees-03-poster.jpg", video: "/works/video/yankees-03.mp4" },
+  { title: "NEW YORK YANKEES 04", category: "AIGC / BRAND FILM", duration: "00:15", image: "/works/video/yankees-04-poster.jpg", video: "/works/video/yankees-04.mp4" },
 ];
 
 const imageWorks: WorkItem[] = [
@@ -139,7 +137,7 @@ export default function PortfolioWheel({ kind }: PortfolioWheelProps) {
               {kind === "video" && isActive ? (
                 <video
                   ref={videoRef}
-                  src="/theo-intro-film.mp4"
+                  src={item.video}
                   poster={item.image}
                   muted={isMuted}
                   loop
