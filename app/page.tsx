@@ -2,6 +2,7 @@ import { CursorGlow, Reveal, TextReveal } from "./Animation";
 import AboutCamcorder from "./AboutCamcorder";
 import HeroLiquidEther from "./HeroLiquidEther";
 import ProjectExperience from "./ProjectExperience";
+import PortfolioWheel from "./PortfolioWheel";
 
 const strengths = [
   {
@@ -127,7 +128,7 @@ export default function Home() {
           THEO ZHOU
         </a>
         <div className="editorial-nav-links">
-          <a href="#projects">WORKS</a>
+          <a href="#video-works">WORKS</a>
           <a href="#about">ABOUT</a>
           <a href="#strengths">SERVICES</a>
           <a href="#projects">JOURNAL</a>
@@ -287,6 +288,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <PortfolioWheel kind="video" />
+      <PortfolioWheel kind="image" />
 
       <footer className="contact" id="contact">
         <div className="contact-glow" aria-hidden="true" />
