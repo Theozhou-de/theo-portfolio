@@ -11,7 +11,6 @@ const campaigns: Campaign[] = [
     description: "以防水机能、户外动势与自然环境为核心的商业产品视觉。",
     works: [
       { title: "TECHLITE SPLASH", category: "PRODUCT CAMPAIGN", image: "/works/image/portfolio-14.webp" },
-      { title: "TRAIL BLACK I", category: "PRODUCT CAMPAIGN", image: "/works/image/portfolio-18.webp" },
       { title: "TRAIL BLACK II", category: "PRODUCT CAMPAIGN", image: "/works/image/portfolio-19.webp" },
       { title: "MEADOW HIKE", category: "PRODUCT CAMPAIGN", image: "/works/image/portfolio-15.webp" },
       { title: "TRAIL MOTION", category: "OUTDOOR CAMPAIGN", image: "/works/image/portfolio-20.webp" },
@@ -22,10 +21,10 @@ const campaigns: Campaign[] = [
     id: "shell", label: "02 / SHELL", title: "COLUMBIA STORMSHELL",
     description: "用悬浮、材质特写与水滴动态强化防水外套的产品卖点。",
     works: [
-      { title: "WEIGHTLESS SHELL", category: "PRODUCT CONCEPT", image: "/works/image/portfolio-01.webp" },
       { title: "STORMSHELL BLACK", category: "PRODUCT VISUAL", image: "/works/image/portfolio-07.webp" },
       { title: "STORMSHELL SAND", category: "PRODUCT VISUAL", image: "/works/image/portfolio-08.webp" },
       { title: "STORMSHELL BLUE", category: "PRODUCT VISUAL", image: "/works/image/portfolio-09.webp" },
+      { title: "WEIGHTLESS SHELL", category: "PRODUCT CONCEPT", image: "/works/image/portfolio-01.webp" },
     ],
   },
   {
