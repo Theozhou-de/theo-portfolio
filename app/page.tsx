@@ -3,6 +3,8 @@ import AboutCamcorder from "./AboutCamcorder";
 import HeroLiquidEther from "./HeroLiquidEther";
 import ProjectExperience from "./ProjectExperience";
 import PortfolioWheel from "./PortfolioWheel";
+import ImagePortfolio from "./ImagePortfolio";
+import SiteNav from "./SiteNav";
 
 const strengths = [
   {
@@ -123,21 +125,7 @@ export default function Home() {
   return (
     <main>
       <CursorGlow />
-      <nav className="editorial-nav" aria-label="主导航">
-        <a className="editorial-logo" href="#home" aria-label="返回首页">
-          THEO ZHOU
-        </a>
-        <div className="editorial-nav-links">
-          <a href="#video-works">WORKS</a>
-          <a href="#about">ABOUT</a>
-          <a href="#strengths">SERVICES</a>
-          <a href="#projects">JOURNAL</a>
-          <a href="#contact">CONTACT</a>
-        </div>
-        <a className="hero-menu" href="#contact" aria-label="联系 Theo">
-          <span aria-hidden="true">•••</span>
-        </a>
-      </nav>
+      <SiteNav />
 
       <section className="hero hero-editorial-root" id="home">
         <HeroLiquidEther />
@@ -249,11 +237,14 @@ export default function Home() {
         </Reveal>
       </section>
 
+      <PortfolioWheel kind="video" />
+      <ImagePortfolio />
+
       <section className="projects section" id="projects">
         <div className="shell">
           <TextReveal className="section-heading">
             <div className="section-kicker">
-              <span>02</span>
+              <span>04</span>
               <p>SELECTED WORKS</p>
             </div>
             <h2>PROJECT EXPERIENCE</h2>
@@ -266,7 +257,7 @@ export default function Home() {
       <section className="strengths section shell" id="strengths">
         <TextReveal className="section-heading compact">
           <div className="section-kicker">
-            <span>03</span>
+            <span>05</span>
             <p>CORE STRENGTHS</p>
           </div>
           <h2>我能带来的价值</h2>
@@ -288,9 +279,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <PortfolioWheel kind="video" />
-      <PortfolioWheel kind="image" />
 
       <footer className="contact" id="contact">
         <div className="contact-glow" aria-hidden="true" />

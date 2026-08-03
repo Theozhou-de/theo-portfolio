@@ -123,7 +123,7 @@ export default function PortfolioWheel({ kind }: PortfolioWheelProps) {
   };
 
   const activeItem = items[active];
-  const sectionNumber = kind === "video" ? "04" : "05";
+  const sectionNumber = kind === "video" ? "02" : "03";
   const title = kind === "video" ? "VIDEO WORKS" : "IMAGE WORKS";
 
   return (
