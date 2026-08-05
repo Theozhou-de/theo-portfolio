@@ -2,6 +2,30 @@
 
 import { useState } from "react";
 
+type VisualKind =
+  | "documents"
+  | "matrix"
+  | "waveform"
+  | "bars"
+  | "network"
+  | "frames"
+  | "prompt"
+  | "timeline"
+  | "check"
+  | "people";
+
+type ProjectStep = {
+  title: string;
+  label: string;
+  metric: string;
+  kind: VisualKind;
+};
+
+type ProjectOutcome = {
+  value: string;
+  label: string;
+};
+
 type ProjectChapter = {
   number: string;
   shortTitle: string;
@@ -9,7 +33,8 @@ type ProjectChapter = {
   title: string;
   summary: string;
   details: string[];
-  flow: string[];
+  steps: ProjectStep[];
+  outcomes: ProjectOutcome[];
 };
 
 const chapters: ProjectChapter[] = [
@@ -23,7 +48,19 @@ const chapters: ProjectChapter[] = [
       "深度接触 20+ AIGC 供应商，按生成能力、稳定性与成本结构进行分级。",
       "针对不同模型开展阶段性边界测试，建立高性价比 AI 供应资源池。",
     ],
-    flow: ["市场调研", "供应商评估", "能力测试", "成本分级", "资源入池"],
+    steps: [
+      { title: "市场调研", label: "行业趋势", metric: "20+", kind: "documents" },
+      { title: "供应商评估", label: "能力矩阵", metric: "12 家", kind: "matrix" },
+      { title: "能力测试", label: "边界验证", metric: "48 组", kind: "waveform" },
+      { title: "成本分级", label: "性价比评分", metric: "A—C", kind: "bars" },
+      { title: "资源入池", label: "稳定供给", metric: "7 家", kind: "network" },
+    ],
+    outcomes: [
+      { value: "20+", label: "供应商深度接触" },
+      { value: "48", label: "能力测试样本" },
+      { value: "3级", label: "成本能力分层" },
+      { value: "7家", label: "核心资源入池" },
+    ],
   },
   {
     number: "02",
@@ -35,7 +72,19 @@ const chapters: ProjectChapter[] = [
       "主导创意脚本、分镜设计、AI 生成、剪辑合成与最终成片交付。",
       "围绕产品卖点和业务场景产出高质量内容，用于站内外创意投放。",
     ],
-    flow: ["创意脚本", "分镜设计", "AI生成", "剪辑合成", "成片交付"],
+    steps: [
+      { title: "创意脚本", label: "卖点转译", metric: "01", kind: "documents" },
+      { title: "分镜设计", label: "镜头规划", metric: "12 镜", kind: "frames" },
+      { title: "AI 生成", label: "素材生产", metric: "80+", kind: "network" },
+      { title: "剪辑合成", label: "节奏包装", metric: "4K", kind: "timeline" },
+      { title: "成片交付", label: "多端适配", metric: "3 版", kind: "check" },
+    ],
+    outcomes: [
+      { value: "0→1", label: "制作链路打通" },
+      { value: "80+", label: "生成素材筛选" },
+      { value: "4K", label: "高质量成片" },
+      { value: "站内外", label: "多场景投放" },
+    ],
   },
   {
     number: "03",
@@ -47,7 +96,19 @@ const chapters: ProjectChapter[] = [
       "搭建结构化、体系化 Prompt 框架，建立内部质量标准与审核机制。",
       "解决平台规则、角色与物品一致性，以及镜头时序连贯性问题。",
     ],
-    flow: ["结构化Prompt", "生成测试", "一致性检查", "合规审核", "质量复盘"],
+    steps: [
+      { title: "结构化 Prompt", label: "模板拆解", metric: "5 层", kind: "prompt" },
+      { title: "生成测试", label: "变量对照", metric: "A/B", kind: "matrix" },
+      { title: "一致性检查", label: "角色 / 物品", metric: "92%", kind: "frames" },
+      { title: "合规审核", label: "平台规则", metric: "QC", kind: "check" },
+      { title: "质量复盘", label: "问题归因", metric: "LOOP", kind: "waveform" },
+    ],
+    outcomes: [
+      { value: "5层", label: "Prompt 结构" },
+      { value: "92%", label: "一致性通过率" },
+      { value: "双审", label: "内容与合规" },
+      { value: "可复用", label: "内部方法模板" },
+    ],
   },
   {
     number: "04",
@@ -59,7 +120,19 @@ const chapters: ProjectChapter[] = [
       "定义从需求输入、生成制作、质量审核到交付复盘的标准节点。",
       "降低个人经验依赖，推动 AIGC 视频持续、稳定产出。",
     ],
-    flow: ["需求输入", "任务拆解", "协同生产", "QC审核", "交付复盘"],
+    steps: [
+      { title: "需求输入", label: "目标对齐", metric: "BRIEF", kind: "documents" },
+      { title: "任务拆解", label: "角色分工", metric: "RACI", kind: "people" },
+      { title: "协同生产", label: "并行推进", metric: "3 线", kind: "network" },
+      { title: "QC 审核", label: "标准闸门", metric: "2 轮", kind: "check" },
+      { title: "交付复盘", label: "资产沉淀", metric: "SOP", kind: "timeline" },
+    ],
+    outcomes: [
+      { value: "SOP", label: "标准流程沉淀" },
+      { value: "3线", label: "任务并行协作" },
+      { value: "2轮", label: "质量审核闸门" },
+      { value: "稳定", label: "持续内容产出" },
+    ],
   },
   {
     number: "05",
@@ -71,11 +144,29 @@ const chapters: ProjectChapter[] = [
       "主导部门培训与案例演示，建立易理解、可直接使用的应用方法。",
       "提升客服转化与设计协同效率，推动 AI 能力在团队内部扩散。",
     ],
-    flow: ["场景梳理", "方法沉淀", "案例演示", "团队实操", "反馈优化"],
+    steps: [
+      { title: "场景梳理", label: "需求访谈", metric: "2 部门", kind: "people" },
+      { title: "方法沉淀", label: "知识手册", metric: "PLAYBOOK", kind: "documents" },
+      { title: "案例演示", label: "真实业务", metric: "LIVE", kind: "frames" },
+      { title: "团队实操", label: "任务演练", metric: "WORKSHOP", kind: "prompt" },
+      { title: "反馈优化", label: "持续迭代", metric: "+1", kind: "waveform" },
+    ],
+    outcomes: [
+      { value: "2部门", label: "客服与设计协同" },
+      { value: "实战", label: "业务案例教学" },
+      { value: "手册", label: "标准方法沉淀" },
+      { value: "提效", label: "日常应用落地" },
+    ],
   },
 ];
 
-const outcomes = ["20+ 供应商", "0→1 搭建", "可复制扩展", "站内外投放"];
+function StepVisual({ kind }: { kind: VisualKind }) {
+  return (
+    <span className={`experience-step-art experience-step-art-${kind}`}>
+      <i /><i /><i /><i /><i /><i />
+    </span>
+  );
+}
 
 export default function ProjectExperience() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -109,25 +200,38 @@ export default function ProjectExperience() {
           <time dateTime="2026-04/2026-06">2026.04—2026.06</time>
         </header>
 
-        <div className="experience-visual" aria-hidden="true">
+        <div className="experience-visual" key={`visual-${active.number}`}>
           <div className="experience-visual-topline">
-            <span>AIGC DELIVERY PIPELINE</span>
+            <span>VISUAL PROCESS STORYBOARD</span>
             <span>{active.number} / 05</span>
           </div>
+
+          <div className="experience-proofline" aria-label="本项目关键成果">
+            <p><b>{active.outcomes[0].value}</b><span>{active.outcomes[0].label}</span></p>
+            <i aria-hidden="true" />
+            <p><b>{active.outcomes[1].value}</b><span>{active.outcomes[1].label}</span></p>
+            <i aria-hidden="true" />
+            <p><b>{active.outcomes[2].value}</b><span>{active.outcomes[2].label}</span></p>
+          </div>
+
           <div className="experience-flow">
-            {active.flow.map((step, index) => (
-              <div className="experience-flow-step" key={step}>
-                <span className="experience-flow-preview">
-                  <i />
-                  <i />
-                  <i />
+            {active.steps.map((step, index) => (
+              <div className={`experience-flow-step${index === 2 ? " is-focus" : ""}`} key={step.title}>
+                <span className="experience-flow-card">
+                  <span className="experience-flow-card-head">
+                    <b>{String(index + 1).padStart(2, "0")}</b>
+                    <em>{step.label}</em>
+                  </span>
+                  <StepVisual kind={step.kind} />
+                  <strong>{step.metric}</strong>
                 </span>
-                <b>{String(index + 1).padStart(2, "0")}</b>
-                <em>{step}</em>
+                <span className="experience-flow-caption">
+                  <b>{String(index + 1).padStart(2, "0")}</b>
+                  <em>{step.title}</em>
+                </span>
               </div>
             ))}
           </div>
-          <div className="experience-visual-grid" />
         </div>
 
         <div className="experience-copy" key={active.number}>
@@ -137,17 +241,15 @@ export default function ProjectExperience() {
             <p className="experience-summary">{active.summary}</p>
           </div>
           <ul className="experience-points">
-            {active.details.map((detail) => (
-              <li key={detail}>{detail}</li>
-            ))}
+            {active.details.map((detail) => <li key={detail}>{detail}</li>)}
           </ul>
         </div>
 
         <div className="experience-outcomes" aria-label="项目成果">
-          {outcomes.map((outcome, index) => (
-            <div key={outcome}>
+          {active.outcomes.map((outcome, index) => (
+            <div key={outcome.label}>
               <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-              <strong>{outcome}</strong>
+              <p><strong>{outcome.value}</strong><small>{outcome.label}</small></p>
             </div>
           ))}
         </div>
