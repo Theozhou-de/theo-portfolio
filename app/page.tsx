@@ -289,8 +289,8 @@ export default function Home() {
             <br />
             <span>一起让它发生。</span>
           </h2>
-          <a className="email-link" href="mailto:contact@qixiangzhou.com">
-            contact@qixiangzhou.com <span>↗</span>
+          <a className="email-link" href="mailto:contact@theozhou.cn">
+            contact@theozhou.cn <span>↗</span>
           </a>
           <div className="footer-bar">
             <p>© 2026 QIXIANG ZHOU</p>
