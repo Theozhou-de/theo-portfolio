@@ -184,7 +184,7 @@ export default function Home() {
       <section className="about section shell" id="about">
         <TextReveal className="section-kicker">
           <span>01</span>
-          <p>ABOUT / EXPERIENCE</p>
+          <p>关于 / EXPERIENCE</p>
         </TextReveal>
         <div className="about-grid">
           <Reveal className="about-visual" delay={0.05}>
