@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description:
     "周琦翔的 AIGC 内容创作、商业影像、视频作品与项目管理作品集。",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
 };
 
