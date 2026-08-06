@@ -2241,25 +2241,53 @@ a {
 }
 
 .image-campaign-tabs {
+  position: relative;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   overflow-x: auto;
-  padding: 2px 0 7px;
+  padding: 8px 2px 12px;
   scrollbar-width: none;
 }
 .image-campaign-tabs::-webkit-scrollbar { display: none; }
 .image-campaign-tabs button {
   flex: 0 0 auto;
-  padding: 9px 14px;
-  border: 1px solid rgba(216, 195, 244, .16);
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid rgba(216, 195, 244, .24);
   border-radius: 999px;
-  background: rgba(255, 255, 255, .025);
-  color: rgba(230, 219, 239, .46);
+  background: linear-gradient(135deg, rgba(255,255,255,.045), rgba(122,65,205,.035));
+  color: rgba(238, 229, 247, .66);
   font: inherit;
-  font-size: 8px;
-  letter-spacing: .14em;
+  font-size: clamp(10px, .72vw, 12px);
+  font-weight: 700;
+  letter-spacing: .12em;
   cursor: pointer;
-  transition: border-color 220ms ease, background 220ms ease, color 220ms ease;
+  animation: imageCampaignSignal 7.2s ease-in-out infinite;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, color 220ms ease, box-shadow 220ms ease;
+}
+.image-campaign-tabs button:nth-child(1) { animation-delay: 0s; }
+.image-campaign-tabs button:nth-child(2) { animation-delay: .8s; }
+.image-campaign-tabs button:nth-child(3) { animation-delay: 1.6s; }
+.image-campaign-tabs button:nth-child(4) { animation-delay: 2.4s; }
+.image-campaign-tabs button:nth-child(5) { animation-delay: 3.2s; }
+.image-campaign-tabs button:nth-child(6) { animation-delay: 4s; }
+
+@keyframes imageCampaignSignal {
+  0%, 7%, 24%, 100% {
+    border-color: rgba(216, 195, 244, .24);
+    color: rgba(238, 229, 247, .66);
+    box-shadow: 0 0 0 rgba(164, 97, 255, 0);
+    text-shadow: 0 0 0 rgba(210, 178, 255, 0);
+  }
+  12% {
+    border-color: rgba(202, 159, 255, .95);
+    color: #f4eaff;
+    box-shadow:
+      0 0 0 1px rgba(169, 104, 255, .18),
+      0 0 18px rgba(158, 87, 255, .58),
+      inset 0 0 16px rgba(153, 84, 246, .16);
+    text-shadow: 0 0 10px rgba(220, 193, 255, .94);
+  }
 }
 .image-campaign-tabs button:hover,
 .image-campaign-tabs button:focus-visible,
@@ -2267,6 +2295,16 @@ a {
   border-color: rgba(183, 127, 255, .64);
   background: rgba(142, 76, 231, .14);
   color: #dfc8ff;
+}
+.image-campaign-tabs button:hover,
+.image-campaign-tabs button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(126, 67, 218, .24);
+}
+.image-campaign-tabs button.is-active {
+  border-color: rgba(183, 127, 255, .72) !important;
+  color: #ead9ff !important;
+  box-shadow: inset 0 0 18px rgba(151, 84, 244, .12);
 }
 .image-campaign-tabs button:focus-visible { outline: 2px solid #c49cff; outline-offset: 2px; }
 
